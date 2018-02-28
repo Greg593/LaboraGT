@@ -1,0 +1,2 @@
+# LaboraGT
+Proyecto de RRHH
