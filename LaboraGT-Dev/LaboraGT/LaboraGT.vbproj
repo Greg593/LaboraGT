@@ -230,6 +230,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\logo.jpeg" />
     <Content Include="Content\Semantic UI\components\accordion.css" />
     <Content Include="Content\Semantic UI\components\accordion.js" />
     <Content Include="Content\Semantic UI\components\accordion.min.css" />

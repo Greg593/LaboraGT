@@ -181,3 +181,4 @@ C:\Users\Soporte\Documents\GitHub\LaboraGT\LaboraGT-Dev\LaboraGT\obj\Debug\Labor
 C:\Users\Soporte\Documents\GitHub\LaboraGT\LaboraGT-Dev\LaboraGT\obj\Debug\LaboraGT.dll
 C:\Users\Soporte\Documents\GitHub\LaboraGT\LaboraGT-Dev\LaboraGT\obj\Debug\LaboraGT.xml
 C:\Users\Soporte\Documents\GitHub\LaboraGT\LaboraGT-Dev\LaboraGT\obj\Debug\LaboraGT.pdb
+C:\Users\Soporte\Documents\GitHub\LaboraGT\LaboraGT-Dev\LaboraGT\obj\Debug\LaboraGT.vbprojResolveAssemblyReference.cache
