@@ -1,0 +1,28 @@
+Menú de Parametrización
+	* Países
+	* Parentezcos
+	* Profesiones
+	* Formas de Pago	
+	* Estados Civiles	
+	* Niveles Academicos	
+	* Tipos de Referencia
+	* Tipos de Documento
+	* Tipos de Dirección
+	* Tipos de Servicios
+	* Tipos de Bonos
+	* Tipos de Descuento
+	* Tipos de Impuesto
+Menú Administración	
+	* Empresas
+	* Bancos
+	* Áreas	
+	* Puestos	
+	* Colaboradores
+	* Indicadores
+Menú de Reportes
+	* Generación de Planilla
+	* Reporte 1
+	* Reporte 2
+	* Reporte 3
+	* Reporte 4
+	* Reporte 5
