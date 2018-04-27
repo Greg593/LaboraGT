@@ -11,10 +11,11 @@
 <body>
     <div class="ui left vertical menu sidebar inverted ">
         <div class="item">
-            <h2 class="ui center aligned icon header inverted">
+            <!--<h2 class="ui center aligned icon header inverted">
                 <i class="chess king icon"></i>
                 Labora GT
-            </h2>
+            </h2>-->
+            <img class="ui centered small image" src="~/Content/img/LaboraGT-logo.png">
         </div>
         <!--<a class="item"><i class="user icon"></i> Usuarios </a>
         <a class="item"><i class="map icon"></i> Ubicaciones </a>
@@ -24,21 +25,18 @@
             Parametrización
             <i class="whmcs icon"></i>
             <div class="menu">
+                <a class="item">Paises</a>
                 <a class="item">Parentezcos</a>
                 <a class="item">Profesiones</a>
-                <a class="item">Tipos de Referencia</a>
-                <a class="item">Tipos de dirección</a>
+                <a class="item">Formas de Pago</a>
                 <a class="item">Estados Civiles</a>
                 <a class="item">Niveles Academicos</a>
-                <a class="item">Paises</a>
-                <a class="item">Bancos</a>
+                <a class="item">Tipos de Referencia</a>
+                <a class="item">Tipos de Documento</a>
+                <a class="item">Tipos de Dirección</a>
                 <a class="item">Tipos de Servicios</a>
-                <a class="item">Formas de Pago</a>
                 <a class="item">Tipos de Bonos</a>
                 <a class="item">Tipos de Descuentos</a>
-                <a class="item">Tipos de Impuestos</a>
-                <a class="item">Paises</a>
-                <a class="item">Áreas</a>
             </div>
         </div>
         <div class="item">
@@ -46,7 +44,23 @@
             <i class="cogs icon"></i>
             <div class="menu">
                 <a class="item">Empresas</a>
+                <a class="item">Bancos</a>
+                <a class="item">Areas</a>
                 <a class="item">Puestos</a>
+                <a class="item">Colaboradores</a>
+                <a class="item">Indicadores</a>
+            </div>
+        </div>
+        <div class="item">
+            Reportes
+            <i class="cogs icon"></i>
+            <div class="menu">
+                <a class="item">Generación de Planilla</a>
+                <a class="item">Reporte 1</a>
+                <a class="item">Reporte 2</a>
+                <a class="item">Reporte 3</a>
+                <a class="item">Reporte 4</a>
+                <a class="item">Reporte 5</a>
             </div>
         </div>
     </div>
@@ -77,16 +91,13 @@
     @Scripts.Render("~/bundles/semantic")
     <script>
         $(document).ready(function () {
-
             $(".btn.my-menu").click(function () {
                 $('.sidebar')
                   .sidebar('setting', 'transition', 'overlay')
                   .sidebar('toggle');
             });
-
             //habilitacion de dropdown
              $('.ui.dropdown').dropdown();
-
         });
     </script>
 </body>
