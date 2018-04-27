@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Iniciar Sesión";
+    Layout = "~/Views/_LayoutFree.cshtml";
+}
+
+<div class="ui  segment inverted vertical grey" style="height: 100% !important">
+    <div class="ui divider hidden"></div>
+    <div class="ui container">
+        <div class="ui two column centered grid stackable">
+            <div class="column">
+                <div class="ui segment very padded">
+                    <!--<img class="ui centered tiny image" src="~/Content/img/LaboraGT-logo-noText.png">-->
+                    <!--<div class="ui divider"></div>
+                    <h2 class="ui header centered">
+                        Iniciar Sesión
+                    </h2>-->
+
+                    <h3 class="ui header">
+                        <img src="~/Content/img/LaboraGT-logo-noText.png" class="ui  image">
+                        Iniciar Sesión
+                    </h3>
+                    <div class="ui divider hidden"></div>
+                    <form class="ui form">
+                        <div class="field">
+                            <label>Código Empresa</label>
+                            <input type="text" name="company_code" placeholder="LABORAGT">
+                        </div>
+                        <div class="field">
+                            <label>Usuario</label>
+                            <input type="text" name="user" placeholder="EMALDONADO">
+                        </div>
+                        <div class="field">
+                            <label>Contraseña</label>
+                            <input type="password" name="password" placeholder="******">
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" tabindex="0" class="hidden">
+                                <label>Recordarme</label>
+                            </div>
+                        </div>
+                        <button class="ui button fluid teal" type="submit">Submit</button>
+                    </form>
+                    <h5 class="ui header centered "><a href="">Olvidaste tu contraseña?</a></h5>
+                    <div class="ui divider hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
