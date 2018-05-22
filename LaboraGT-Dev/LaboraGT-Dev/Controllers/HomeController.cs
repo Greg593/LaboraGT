@@ -8,14 +8,22 @@ namespace LaboraGT_Dev.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string data = "")
         {
-            return View();
+            
+            if(data != "")
+            {
+                return PartialView("PartialScript");
+            }else
+            {
+                return View();
+            }
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            Helper.MensajeSistema("Your application description page.",this);
 
             return View();
         }
