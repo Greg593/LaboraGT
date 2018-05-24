@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44c7410b4ded4f73865a64e9a4997c7b" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Area" Width="1.5" PointX="1.5" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Banco" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Bonos" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Colaborador" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.ColaboradorDescuento" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.CuentaDeposito" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.CuentaEmpresa" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.DatoFamiliar" Width="1.5" PointX="8.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.DatosAcademicos" Width="1.5" PointX="5.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.DatosLaborales" Width="1.5" PointX="5.25" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Departamento" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.DetallePlanilla" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Direcciones" Width="1.5" PointX="8.25" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Empresa" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.EmpresaColaborador" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.EstadoCivil" Width="1.5" PointX="0.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.formaPago" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Identificacion" Width="1.5" PointX="11.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Impuesto" Width="1.5" PointX="1.5" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Municipio" Width="1.5" PointX="3" PointY="41" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.NivelAcademico" Width="1.5" PointX="3" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Pais" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Parentezco" Width="1.5" PointX="9" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Permiso" Width="1.5" PointX="1.5" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Planilla" Width="1.5" PointX="6" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Profesion" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Puesto" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.ReferenciaColaborador" Width="1.5" PointX="11.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Rol" Width="1.5" PointX="1.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Servicio" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.TipoCuenta" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.TipoDescuento" Width="1.5" PointX="3" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.TipoDireccion" Width="1.5" PointX="6" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.TipoDocumento" Width="1.5" PointX="9" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.TipoReferencia" Width="1.5" PointX="9" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_LABORAGT_Model.Usuario" Width="1.5" PointX="0.75" PointY="31.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefArea49" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefBanco33" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefBanco43" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador15" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador2" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador23" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador26" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador34" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador39" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador53" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador56" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador58" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefColaborador6" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefEstadoCivil35" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefProfesion37" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefPuesto46" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefUsuario64" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefTipoDescuento57" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefTipoCuenta42" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefEmpresa31" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefTipoCuenta32" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefParentezco24" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefProfesion38" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefDepartamento29" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefMunicipio30" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefNivelAcademico27" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefPais28" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefDepartamento19" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefDepartamento9" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefPais8" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefformaPago54" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefPlanilla52" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefMunicipio20" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefPais18" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefTipoDireccion5" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefEmpresa1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefTipoDocumento59" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefParentezco17" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefProfesion36" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefTipoReferencia16" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.RefRol67" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.BonoColaborador" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.PermisoRol" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.PuestoImpuesto" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_LABORAGT_Model.ServicioEmpresa" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
