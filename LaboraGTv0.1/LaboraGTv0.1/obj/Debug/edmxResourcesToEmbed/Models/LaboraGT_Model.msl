@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DB_LABORAGT_ModelStoreContainer" CdmEntityContainer="DB_LABORAGT_Entities">
+  <EntityContainerMapping StorageEntityContainer="LABORAGT_ModelStoreContainer" CdmEntityContainer="LABORAGT_Entities">
     <EntitySetMapping Name="Area">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Area">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Area">
         <MappingFragment StoreEntitySet="Area">
           <ScalarProperty Name="idArea" ColumnName="idArea" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Banco">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Banco">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Banco">
         <MappingFragment StoreEntitySet="Banco">
           <ScalarProperty Name="idBanco" ColumnName="idBanco" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -18,7 +18,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Bonos">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Bonos">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Bonos">
         <MappingFragment StoreEntitySet="Bonos">
           <ScalarProperty Name="idBono" ColumnName="idBono" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -27,7 +27,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Colaborador">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Colaborador">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Colaborador">
         <MappingFragment StoreEntitySet="Colaborador">
           <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
           <ScalarProperty Name="nombre1" ColumnName="nombre1" />
@@ -41,41 +41,20 @@
           <ScalarProperty Name="idEstadoCivil" ColumnName="idEstadoCivil" />
           <ScalarProperty Name="idProfesion" ColumnName="idProfesion" />
           <ScalarProperty Name="idPuesto" ColumnName="idPuesto" />
-          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ColaboradorDescuento">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.ColaboradorDescuento">
-        <MappingFragment StoreEntitySet="ColaboradorDescuento">
-          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
-          <ScalarProperty Name="idDescuento" ColumnName="idDescuento" />
-          <ScalarProperty Name="idTipoDescuento" ColumnName="idTipoDescuento" />
-          <ScalarProperty Name="monto" ColumnName="monto" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CuentaDeposito">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.CuentaDeposito">
-        <MappingFragment StoreEntitySet="CuentaDeposito">
-          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
-          <ScalarProperty Name="idTipoCuenta" ColumnName="idTipoCuenta" />
-          <ScalarProperty Name="idBanco" ColumnName="idBanco" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CuentaEmpresa">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.CuentaEmpresa">
-        <MappingFragment StoreEntitySet="CuentaEmpresa">
-          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
-          <ScalarProperty Name="idTipoCuenta" ColumnName="idTipoCuenta" />
-          <ScalarProperty Name="idBanco" ColumnName="idBanco" />
-          <ScalarProperty Name="noCuenta" ColumnName="noCuenta" />
+    <EntitySetMapping Name="Credencial">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Credencial">
+        <MappingFragment StoreEntitySet="Credencial">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="passw" ColumnName="passw" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DatoFamiliar">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.DatoFamiliar">
+      <EntityTypeMapping TypeName="LABORAGT_Model.DatoFamiliar">
         <MappingFragment StoreEntitySet="DatoFamiliar">
           <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
           <ScalarProperty Name="idDatoFamiliar" ColumnName="idDatoFamiliar" />
@@ -88,10 +67,10 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DatosAcademicos">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.DatosAcademicos">
+      <EntityTypeMapping TypeName="LABORAGT_Model.DatosAcademicos">
         <MappingFragment StoreEntitySet="DatosAcademicos">
           <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
-          <ScalarProperty Name="idAdemicoColaborador" ColumnName="idAdemicoColaborador" />
+          <ScalarProperty Name="idAcademicoColaborador" ColumnName="idAcademicoColaborador" />
           <ScalarProperty Name="idNivelAcademico" ColumnName="idNivelAcademico" />
           <ScalarProperty Name="nombreInstitucion" ColumnName="nombreInstitucion" />
           <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
@@ -106,7 +85,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DatosLaborales">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.DatosLaborales">
+      <EntityTypeMapping TypeName="LABORAGT_Model.DatosLaborales">
         <MappingFragment StoreEntitySet="DatosLaborales">
           <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
           <ScalarProperty Name="idLaboral" ColumnName="idLaboral" />
@@ -122,7 +101,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Departamento">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Departamento">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Departamento">
         <MappingFragment StoreEntitySet="Departamento">
           <ScalarProperty Name="idPais" ColumnName="idPais" />
           <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
@@ -131,12 +110,12 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DetallePlanilla">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.DetallePlanilla">
+      <EntityTypeMapping TypeName="LABORAGT_Model.DetallePlanilla">
         <MappingFragment StoreEntitySet="DetallePlanilla">
           <ScalarProperty Name="idPlanilla" ColumnName="idPlanilla" />
           <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
           <ScalarProperty Name="idFormaPago" ColumnName="idFormaPago" />
-          <ScalarProperty Name="año" ColumnName="año" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
           <ScalarProperty Name="mes" ColumnName="mes" />
           <ScalarProperty Name="correlativo" ColumnName="correlativo" />
           <ScalarProperty Name="Ordinario" ColumnName="Ordinario" />
@@ -149,7 +128,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Direcciones">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Direcciones">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Direcciones">
         <MappingFragment StoreEntitySet="Direcciones">
           <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
           <ScalarProperty Name="idTipoDireccion" ColumnName="idTipoDireccion" />
@@ -162,7 +141,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Empresa">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Empresa">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Empresa">
         <MappingFragment StoreEntitySet="Empresa">
           <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -170,17 +149,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EmpresaColaborador">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.EmpresaColaborador">
-        <MappingFragment StoreEntitySet="EmpresaColaborador">
-          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
-          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
-          <ScalarProperty Name="Activo" ColumnName="Activo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="EstadoCivil">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.EstadoCivil">
+      <EntityTypeMapping TypeName="LABORAGT_Model.EstadoCivil">
         <MappingFragment StoreEntitySet="EstadoCivil">
           <ScalarProperty Name="idEstadoCivil" ColumnName="idEstadoCivil" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -188,7 +158,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="formaPago">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.formaPago">
+      <EntityTypeMapping TypeName="LABORAGT_Model.formaPago">
         <MappingFragment StoreEntitySet="formaPago">
           <ScalarProperty Name="idFormaPago" ColumnName="idFormaPago" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -196,7 +166,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Identificacion">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Identificacion">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Identificacion">
         <MappingFragment StoreEntitySet="Identificacion">
           <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
           <ScalarProperty Name="idIdentificacion" ColumnName="idIdentificacion" />
@@ -206,7 +176,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Impuesto">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Impuesto">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Impuesto">
         <MappingFragment StoreEntitySet="Impuesto">
           <ScalarProperty Name="idImpuesto" ColumnName="idImpuesto" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -215,7 +185,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Municipio">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Municipio">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Municipio">
         <MappingFragment StoreEntitySet="Municipio">
           <ScalarProperty Name="idPais" ColumnName="idPais" />
           <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
@@ -225,7 +195,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NivelAcademico">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.NivelAcademico">
+      <EntityTypeMapping TypeName="LABORAGT_Model.NivelAcademico">
         <MappingFragment StoreEntitySet="NivelAcademico">
           <ScalarProperty Name="idNivelAcademico" ColumnName="idNivelAcademico" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -233,7 +203,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Pais">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Pais">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Pais">
         <MappingFragment StoreEntitySet="Pais">
           <ScalarProperty Name="idPais" ColumnName="idPais" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -242,32 +212,24 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Parentezco">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Parentezco">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Parentezco">
         <MappingFragment StoreEntitySet="Parentezco">
           <ScalarProperty Name="idParentezco" ColumnName="idParentezco" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Permiso">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Permiso">
-        <MappingFragment StoreEntitySet="Permiso">
-          <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Planilla">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Planilla">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Planilla">
         <MappingFragment StoreEntitySet="Planilla">
           <ScalarProperty Name="idPlanilla" ColumnName="idPlanilla" />
-          <ScalarProperty Name="año" ColumnName="año" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
           <ScalarProperty Name="mes" ColumnName="mes" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Profesion">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Profesion">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Profesion">
         <MappingFragment StoreEntitySet="Profesion">
           <ScalarProperty Name="idProfesion" ColumnName="idProfesion" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -275,7 +237,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Puesto">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Puesto">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Puesto">
         <MappingFragment StoreEntitySet="Puesto">
           <ScalarProperty Name="idPuesto" ColumnName="idPuesto" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -285,7 +247,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ReferenciaColaborador">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.ReferenciaColaborador">
+      <EntityTypeMapping TypeName="LABORAGT_Model.ReferenciaColaborador">
         <MappingFragment StoreEntitySet="ReferenciaColaborador">
           <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
           <ScalarProperty Name="idReferencia" ColumnName="idReferencia" />
@@ -299,16 +261,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Rol">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Rol">
-        <MappingFragment StoreEntitySet="Rol">
-          <ScalarProperty Name="idRol" ColumnName="idRol" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Servicio">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Servicio">
+      <EntityTypeMapping TypeName="LABORAGT_Model.Servicio">
         <MappingFragment StoreEntitySet="Servicio">
           <ScalarProperty Name="idServicio" ColumnName="idServicio" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -316,7 +270,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TipoCuenta">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.TipoCuenta">
+      <EntityTypeMapping TypeName="LABORAGT_Model.TipoCuenta">
         <MappingFragment StoreEntitySet="TipoCuenta">
           <ScalarProperty Name="idTipoCuenta" ColumnName="idTipoCuenta" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -324,7 +278,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TipoDescuento">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.TipoDescuento">
+      <EntityTypeMapping TypeName="LABORAGT_Model.TipoDescuento">
         <MappingFragment StoreEntitySet="TipoDescuento">
           <ScalarProperty Name="idTipoDescuento" ColumnName="idTipoDescuento" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -332,7 +286,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TipoDireccion">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.TipoDireccion">
+      <EntityTypeMapping TypeName="LABORAGT_Model.TipoDireccion">
         <MappingFragment StoreEntitySet="TipoDireccion">
           <ScalarProperty Name="idTipoDireccion" ColumnName="idTipoDireccion" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
@@ -340,7 +294,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TipoDocumento">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.TipoDocumento">
+      <EntityTypeMapping TypeName="LABORAGT_Model.TipoDocumento">
         <MappingFragment StoreEntitySet="TipoDocumento">
           <ScalarProperty Name="idTipoDocumento" ColumnName="idTipoDocumento" />
           <ScalarProperty Name="tipoDocumento1" ColumnName="tipoDocumento" />
@@ -349,23 +303,52 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TipoReferencia">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.TipoReferencia">
+      <EntityTypeMapping TypeName="LABORAGT_Model.TipoReferencia">
         <MappingFragment StoreEntitySet="TipoReferencia">
           <ScalarProperty Name="idTipoReferencia" ColumnName="idTipoReferencia" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Usuario">
-      <EntityTypeMapping TypeName="DB_LABORAGT_Model.Usuario">
-        <MappingFragment StoreEntitySet="Usuario">
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="pass" ColumnName="pass" />
-          <ScalarProperty Name="idRol" ColumnName="idRol" />
+    <EntitySetMapping Name="ColaboradorDescuento">
+      <EntityTypeMapping TypeName="LABORAGT_Model.ColaboradorDescuento">
+        <MappingFragment StoreEntitySet="ColaboradorDescuento">
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="idDescuento" ColumnName="idDescuento" />
+          <ScalarProperty Name="idTipoDescuento" ColumnName="idTipoDescuento" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="BonoColaborador" TypeName="DB_LABORAGT_Model.BonoColaborador" StoreEntitySet="BonoColaborador">
+    <EntitySetMapping Name="CuentaDeposito">
+      <EntityTypeMapping TypeName="LABORAGT_Model.CuentaDeposito">
+        <MappingFragment StoreEntitySet="CuentaDeposito">
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="idTipoCuenta" ColumnName="idTipoCuenta" />
+          <ScalarProperty Name="idBanco" ColumnName="idBanco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CuentaEmpresa">
+      <EntityTypeMapping TypeName="LABORAGT_Model.CuentaEmpresa">
+        <MappingFragment StoreEntitySet="CuentaEmpresa">
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="idTipoCuenta" ColumnName="idTipoCuenta" />
+          <ScalarProperty Name="idBanco" ColumnName="idBanco" />
+          <ScalarProperty Name="noCuenta" ColumnName="noCuenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpresaColaborador">
+      <EntityTypeMapping TypeName="LABORAGT_Model.EmpresaColaborador">
+        <MappingFragment StoreEntitySet="EmpresaColaborador">
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BonoColaborador" TypeName="LABORAGT_Model.BonoColaborador" StoreEntitySet="BonoColaborador">
       <EndProperty Name="Bonos">
         <ScalarProperty Name="idBono" ColumnName="idBono" />
       </EndProperty>
@@ -373,15 +356,7 @@
         <ScalarProperty Name="idColaborador" ColumnName="idColaborador" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="PermisoRol" TypeName="DB_LABORAGT_Model.PermisoRol" StoreEntitySet="PermisoRol">
-      <EndProperty Name="Permiso">
-        <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
-      </EndProperty>
-      <EndProperty Name="Rol">
-        <ScalarProperty Name="idRol" ColumnName="idRol" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="PuestoImpuesto" TypeName="DB_LABORAGT_Model.PuestoImpuesto" StoreEntitySet="PuestoImpuesto">
+    <AssociationSetMapping Name="PuestoImpuesto" TypeName="LABORAGT_Model.PuestoImpuesto" StoreEntitySet="PuestoImpuesto">
       <EndProperty Name="Impuesto">
         <ScalarProperty Name="idImpuesto" ColumnName="idImpuesto" />
       </EndProperty>
@@ -389,7 +364,7 @@
         <ScalarProperty Name="idPuesto" ColumnName="idPuesto" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ServicioEmpresa" TypeName="DB_LABORAGT_Model.ServicioEmpresa" StoreEntitySet="ServicioEmpresa">
+    <AssociationSetMapping Name="ServicioEmpresa" TypeName="LABORAGT_Model.ServicioEmpresa" StoreEntitySet="ServicioEmpresa">
       <EndProperty Name="Empresa">
         <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
       </EndProperty>

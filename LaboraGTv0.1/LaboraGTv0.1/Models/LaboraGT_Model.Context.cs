@@ -13,10 +13,10 @@ namespace LaboraGTv0._1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DB_LABORAGT_Entities : DbContext
+    public partial class LABORAGT_Entities : DbContext
     {
-        public DB_LABORAGT_Entities()
-            : base("name=DB_LABORAGT_Entities")
+        public LABORAGT_Entities()
+            : base("name=LABORAGT_Entities")
         {
         }
     
@@ -29,9 +29,7 @@ namespace LaboraGTv0._1.Models
         public virtual DbSet<Banco> Banco { get; set; }
         public virtual DbSet<Bonos> Bonos { get; set; }
         public virtual DbSet<Colaborador> Colaborador { get; set; }
-        public virtual DbSet<ColaboradorDescuento> ColaboradorDescuento { get; set; }
-        public virtual DbSet<CuentaDeposito> CuentaDeposito { get; set; }
-        public virtual DbSet<CuentaEmpresa> CuentaEmpresa { get; set; }
+        public virtual DbSet<Credencial> Credencial { get; set; }
         public virtual DbSet<DatoFamiliar> DatoFamiliar { get; set; }
         public virtual DbSet<DatosAcademicos> DatosAcademicos { get; set; }
         public virtual DbSet<DatosLaborales> DatosLaborales { get; set; }
@@ -39,7 +37,6 @@ namespace LaboraGTv0._1.Models
         public virtual DbSet<DetallePlanilla> DetallePlanilla { get; set; }
         public virtual DbSet<Direcciones> Direcciones { get; set; }
         public virtual DbSet<Empresa> Empresa { get; set; }
-        public virtual DbSet<EmpresaColaborador> EmpresaColaborador { get; set; }
         public virtual DbSet<EstadoCivil> EstadoCivil { get; set; }
         public virtual DbSet<formaPago> formaPago { get; set; }
         public virtual DbSet<Identificacion> Identificacion { get; set; }
@@ -48,18 +45,19 @@ namespace LaboraGTv0._1.Models
         public virtual DbSet<NivelAcademico> NivelAcademico { get; set; }
         public virtual DbSet<Pais> Pais { get; set; }
         public virtual DbSet<Parentezco> Parentezco { get; set; }
-        public virtual DbSet<Permiso> Permiso { get; set; }
         public virtual DbSet<Planilla> Planilla { get; set; }
         public virtual DbSet<Profesion> Profesion { get; set; }
         public virtual DbSet<Puesto> Puesto { get; set; }
         public virtual DbSet<ReferenciaColaborador> ReferenciaColaborador { get; set; }
-        public virtual DbSet<Rol> Rol { get; set; }
         public virtual DbSet<Servicio> Servicio { get; set; }
         public virtual DbSet<TipoCuenta> TipoCuenta { get; set; }
         public virtual DbSet<TipoDescuento> TipoDescuento { get; set; }
         public virtual DbSet<TipoDireccion> TipoDireccion { get; set; }
         public virtual DbSet<TipoDocumento> TipoDocumento { get; set; }
         public virtual DbSet<TipoReferencia> TipoReferencia { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<ColaboradorDescuento> ColaboradorDescuento { get; set; }
+        public virtual DbSet<CuentaDeposito> CuentaDeposito { get; set; }
+        public virtual DbSet<CuentaEmpresa> CuentaEmpresa { get; set; }
+        public virtual DbSet<EmpresaColaborador> EmpresaColaborador { get; set; }
     }
 }

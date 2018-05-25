@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DB_LABORAGT_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="LABORAGT_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Area">
     <Key>
       <PropertyRef Name="idArea" />
     </Key>
-    <Property Name="idArea" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="Descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Puesto" Relationship="Self.RefArea49" FromRole="Area" ToRole="Puesto" />
   </EntityType>
   <EntityType Name="Banco">
     <Key>
       <PropertyRef Name="idBanco" />
     </Key>
-    <Property Name="idBanco" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idBanco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="CuentaEmpresa" Relationship="Self.RefBanco33" FromRole="Banco" ToRole="CuentaEmpresa" />
     <NavigationProperty Name="CuentaDeposito" Relationship="Self.RefBanco43" FromRole="Banco" ToRole="CuentaDeposito" />
   </EntityType>
@@ -21,28 +21,28 @@
     <Key>
       <PropertyRef Name="idBono" />
     </Key>
-    <Property Name="idBono" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="monto" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="idBono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="monto" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
     <NavigationProperty Name="Colaborador" Relationship="Self.BonoColaborador" FromRole="Bonos" ToRole="Colaborador" />
   </EntityType>
   <EntityType Name="Colaborador">
     <Key>
       <PropertyRef Name="idColaborador" />
     </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="nombre1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="nombre2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="nombre3" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="apellido1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="apellido2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="apellido3" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="fechaNacimiento" Type="DateTime" Precision="0" />
-    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="idEstadoCivil" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idProfesion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idPuesto" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="username" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="nombre3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="apellido1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="apellido3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idEstadoCivil" Type="Int32" Nullable="false" />
+    <Property Name="idProfesion" Type="Int32" Nullable="false" />
+    <Property Name="idPuesto" Type="Int32" Nullable="false" />
+    <Property Name="usuario" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ReferenciaColaborador" Relationship="Self.RefColaborador15" FromRole="Colaborador" ToRole="ReferenciaColaborador" />
     <NavigationProperty Name="EmpresaColaborador" Relationship="Self.RefColaborador2" FromRole="Colaborador" ToRole="EmpresaColaborador" />
     <NavigationProperty Name="DatoFamiliar" Relationship="Self.RefColaborador23" FromRole="Colaborador" ToRole="DatoFamiliar" />
@@ -53,80 +53,51 @@
     <NavigationProperty Name="ColaboradorDescuento" Relationship="Self.RefColaborador56" FromRole="Colaborador" ToRole="ColaboradorDescuento" />
     <NavigationProperty Name="Identificacion" Relationship="Self.RefColaborador58" FromRole="Colaborador" ToRole="Identificacion" />
     <NavigationProperty Name="Direcciones" Relationship="Self.RefColaborador6" FromRole="Colaborador" ToRole="Direcciones" />
+    <NavigationProperty Name="Credencial" Relationship="Self.RefCredencial64" FromRole="Colaborador" ToRole="Credencial" />
     <NavigationProperty Name="EstadoCivil" Relationship="Self.RefEstadoCivil35" FromRole="Colaborador" ToRole="EstadoCivil" />
     <NavigationProperty Name="Profesion" Relationship="Self.RefProfesion37" FromRole="Colaborador" ToRole="Profesion" />
     <NavigationProperty Name="Puesto" Relationship="Self.RefPuesto46" FromRole="Colaborador" ToRole="Puesto" />
-    <NavigationProperty Name="Usuario" Relationship="Self.RefUsuario64" FromRole="Colaborador" ToRole="Usuario" />
     <NavigationProperty Name="Bonos" Relationship="Self.BonoColaborador" FromRole="Colaborador" ToRole="Bonos" />
   </EntityType>
-  <EntityType Name="ColaboradorDescuento">
+  <EntityType Name="Credencial">
     <Key>
-      <PropertyRef Name="idColaborador" />
-      <PropertyRef Name="idDescuento" />
+      <PropertyRef Name="usuario" />
     </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idDescuento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idTipoDescuento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="monto" Type="Decimal" Precision="13" Scale="2" />
-    <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador56" FromRole="ColaboradorDescuento" ToRole="Colaborador" />
-    <NavigationProperty Name="TipoDescuento" Relationship="Self.RefTipoDescuento57" FromRole="ColaboradorDescuento" ToRole="TipoDescuento" />
-  </EntityType>
-  <EntityType Name="CuentaDeposito">
-    <Key>
-      <PropertyRef Name="idColaborador" />
-    </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idTipoCuenta" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-    <Property Name="idBanco" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <NavigationProperty Name="Banco" Relationship="Self.RefBanco43" FromRole="CuentaDeposito" ToRole="Banco" />
-    <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador39" FromRole="CuentaDeposito" ToRole="Colaborador" />
-    <NavigationProperty Name="TipoCuenta" Relationship="Self.RefTipoCuenta42" FromRole="CuentaDeposito" ToRole="TipoCuenta" />
-  </EntityType>
-  <EntityType Name="CuentaEmpresa">
-    <Key>
-      <PropertyRef Name="idEmpresa" />
-    </Key>
-    <Property Name="idEmpresa" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
-    <Property Name="idTipoCuenta" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-    <Property Name="idBanco" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="noCuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Banco" Relationship="Self.RefBanco33" FromRole="CuentaEmpresa" ToRole="Banco" />
-    <NavigationProperty Name="Empresa" Relationship="Self.RefEmpresa31" FromRole="CuentaEmpresa" ToRole="Empresa" />
-    <NavigationProperty Name="TipoCuenta" Relationship="Self.RefTipoCuenta32" FromRole="CuentaEmpresa" ToRole="TipoCuenta" />
+    <Property Name="usuario" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="passw" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Colaborador" Relationship="Self.RefCredencial64" FromRole="Credencial" ToRole="Colaborador" />
   </EntityType>
   <EntityType Name="DatoFamiliar">
     <Key>
-      <PropertyRef Name="idColaborador" />
       <PropertyRef Name="idDatoFamiliar" />
     </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idDatoFamiliar" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idParentezco" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idProfesion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-    <Property Name="edad" Type="Decimal" Precision="3" Scale="0" />
-    <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idDatoFamiliar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idParentezco" Type="Int32" Nullable="false" />
+    <Property Name="idProfesion" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="edad" Type="Int32" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador23" FromRole="DatoFamiliar" ToRole="Colaborador" />
     <NavigationProperty Name="Parentezco" Relationship="Self.RefParentezco24" FromRole="DatoFamiliar" ToRole="Parentezco" />
     <NavigationProperty Name="Profesion" Relationship="Self.RefProfesion38" FromRole="DatoFamiliar" ToRole="Profesion" />
   </EntityType>
   <EntityType Name="DatosAcademicos">
     <Key>
-      <PropertyRef Name="idColaborador" />
-      <PropertyRef Name="idAdemicoColaborador" />
+      <PropertyRef Name="idAcademicoColaborador" />
     </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idAdemicoColaborador" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idNivelAcademico" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="nombreInstitucion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="fechaInicio" Type="DateTime" Precision="0" />
-    <Property Name="fechaFinalizo" Type="DateTime" Precision="0" />
-    <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="direccion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idAcademicoColaborador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idNivelAcademico" Type="Int32" Nullable="false" />
+    <Property Name="nombreInstitucion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fechaFinalizo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="idPais" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-    <Property Name="idDepartamento" Type="Decimal" Precision="3" Scale="0" />
-    <Property Name="idMunicipio" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="idPais" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idDepartamento" Type="Int32" />
+    <Property Name="idMunicipio" Type="Int32" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador26" FromRole="DatosAcademicos" ToRole="Colaborador" />
     <NavigationProperty Name="Departamento" Relationship="Self.RefDepartamento29" FromRole="DatosAcademicos" ToRole="Departamento" />
     <NavigationProperty Name="Municipio" Relationship="Self.RefMunicipio30" FromRole="DatosAcademicos" ToRole="Municipio" />
@@ -135,29 +106,27 @@
   </EntityType>
   <EntityType Name="DatosLaborales">
     <Key>
-      <PropertyRef Name="idColaborador" />
       <PropertyRef Name="idLaboral" />
     </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idLaboral" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="Empresa" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-    <Property Name="CargoInicial" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="CargoFinal" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idLaboral" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empresa" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CargoInicial" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CargoFinal" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="JefeInmediato" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-    <Property Name="FechaInicio" Type="DateTime" Precision="0" />
-    <Property Name="FechaFinal" Type="DateTime" Precision="0" />
-    <Property Name="MotivoRetiro" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="JefeInmediato" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaFinal" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MotivoRetiro" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador34" FromRole="DatosLaborales" ToRole="Colaborador" />
   </EntityType>
   <EntityType Name="Departamento">
     <Key>
-      <PropertyRef Name="idPais" />
       <PropertyRef Name="idDepartamento" />
     </Key>
     <Property Name="idPais" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="idDepartamento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="DatosAcademicos" Relationship="Self.RefDepartamento29" FromRole="Departamento" ToRole="DatosAcademicos" />
     <NavigationProperty Name="Direcciones" Relationship="Self.RefDepartamento19" FromRole="Departamento" ToRole="Direcciones" />
     <NavigationProperty Name="Municipio" Relationship="Self.RefDepartamento9" FromRole="Departamento" ToRole="Municipio" />
@@ -165,24 +134,19 @@
   </EntityType>
   <EntityType Name="DetallePlanilla">
     <Key>
-      <PropertyRef Name="idPlanilla" />
-      <PropertyRef Name="idColaborador" />
-      <PropertyRef Name="idFormaPago" />
-      <PropertyRef Name="año" />
-      <PropertyRef Name="mes" />
       <PropertyRef Name="correlativo" />
     </Key>
-    <Property Name="idPlanilla" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idFormaPago" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="año" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
-    <Property Name="mes" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-    <Property Name="correlativo" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="Ordinario" Type="Decimal" Precision="13" Scale="2" />
-    <Property Name="Bonificaciones" Type="Decimal" Precision="13" Scale="2" />
-    <Property Name="Descuentos" Type="Decimal" Precision="13" Scale="2" />
-    <Property Name="Impuestos" Type="Decimal" Precision="13" Scale="2" />
-    <Property Name="Extras" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="idPlanilla" Type="Int32" Nullable="false" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idFormaPago" Type="Int32" Nullable="false" />
+    <Property Name="anio" Type="Int32" Nullable="false" />
+    <Property Name="mes" Type="Int32" Nullable="false" />
+    <Property Name="correlativo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ordinario" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="Bonificaciones" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="Descuentos" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="Impuestos" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="Extras" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
     <Property Name="Total" Type="Decimal" Precision="13" Scale="2" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador53" FromRole="DetallePlanilla" ToRole="Colaborador" />
     <NavigationProperty Name="formaPago" Relationship="Self.RefformaPago54" FromRole="DetallePlanilla" ToRole="formaPago" />
@@ -190,17 +154,15 @@
   </EntityType>
   <EntityType Name="Direcciones">
     <Key>
-      <PropertyRef Name="idColaborador" />
-      <PropertyRef Name="idTipoDireccion" />
       <PropertyRef Name="idDireccion" />
     </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idTipoDireccion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idDireccion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="idPais" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-    <Property Name="idDepartamento" Type="Decimal" Precision="3" Scale="0" />
-    <Property Name="idMunicipio" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idTipoDireccion" Type="Int32" Nullable="false" />
+    <Property Name="idDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idPais" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+    <Property Name="idMunicipio" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador6" FromRole="Direcciones" ToRole="Colaborador" />
     <NavigationProperty Name="Departamento" Relationship="Self.RefDepartamento19" FromRole="Direcciones" ToRole="Departamento" />
     <NavigationProperty Name="Municipio" Relationship="Self.RefMunicipio20" FromRole="Direcciones" ToRole="Municipio" />
@@ -211,49 +173,37 @@
     <Key>
       <PropertyRef Name="idEmpresa" />
     </Key>
-    <Property Name="idEmpresa" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="NIT" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="CuentaEmpresa" Relationship="Self.RefEmpresa31" FromRole="Empresa" ToRole="CuentaEmpresa" />
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NIT" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="EmpresaColaborador" Relationship="Self.RefEmpresa1" FromRole="Empresa" ToRole="EmpresaColaborador" />
+    <NavigationProperty Name="CuentaEmpresa" Relationship="Self.RefEmpresa31" FromRole="Empresa" ToRole="CuentaEmpresa" />
     <NavigationProperty Name="Servicio" Relationship="Self.ServicioEmpresa" FromRole="Empresa" ToRole="Servicio" />
-  </EntityType>
-  <EntityType Name="EmpresaColaborador">
-    <Key>
-      <PropertyRef Name="idEmpresa" />
-      <PropertyRef Name="idColaborador" />
-    </Key>
-    <Property Name="idEmpresa" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="Activo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador2" FromRole="EmpresaColaborador" ToRole="Colaborador" />
-    <NavigationProperty Name="Empresa" Relationship="Self.RefEmpresa1" FromRole="EmpresaColaborador" ToRole="Empresa" />
   </EntityType>
   <EntityType Name="EstadoCivil">
     <Key>
       <PropertyRef Name="idEstadoCivil" />
     </Key>
-    <Property Name="idEstadoCivil" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idEstadoCivil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefEstadoCivil35" FromRole="EstadoCivil" ToRole="Colaborador" />
   </EntityType>
   <EntityType Name="formaPago">
     <Key>
       <PropertyRef Name="idFormaPago" />
     </Key>
-    <Property Name="idFormaPago" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idFormaPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="DetallePlanilla" Relationship="Self.RefformaPago54" FromRole="formaPago" ToRole="DetallePlanilla" />
   </EntityType>
   <EntityType Name="Identificacion">
     <Key>
-      <PropertyRef Name="idColaborador" />
       <PropertyRef Name="idIdentificacion" />
     </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idIdentificacion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idTipoDocumento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="noDocumento" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idIdentificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idTipoDocumento" Type="Int32" Nullable="false" />
+    <Property Name="noDocumento" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador58" FromRole="Identificacion" ToRole="Colaborador" />
     <NavigationProperty Name="TipoDocumento" Relationship="Self.RefTipoDocumento59" FromRole="Identificacion" ToRole="TipoDocumento" />
   </EntityType>
@@ -261,21 +211,19 @@
     <Key>
       <PropertyRef Name="idImpuesto" />
     </Key>
-    <Property Name="idImpuesto" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="porcentaje" Type="Decimal" Precision="5" Scale="3" />
+    <Property Name="idImpuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="porcentaje" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
     <NavigationProperty Name="Puesto" Relationship="Self.PuestoImpuesto" FromRole="Impuesto" ToRole="Puesto" />
   </EntityType>
   <EntityType Name="Municipio">
     <Key>
-      <PropertyRef Name="idPais" />
-      <PropertyRef Name="idDepartamento" />
       <PropertyRef Name="idMunicipio" />
     </Key>
     <Property Name="idPais" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="idDepartamento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idMunicipio" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+    <Property Name="idMunicipio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="DatosAcademicos" Relationship="Self.RefMunicipio30" FromRole="Municipio" ToRole="DatosAcademicos" />
     <NavigationProperty Name="Departamento" Relationship="Self.RefDepartamento9" FromRole="Municipio" ToRole="Departamento" />
     <NavigationProperty Name="Direcciones" Relationship="Self.RefMunicipio20" FromRole="Municipio" ToRole="Direcciones" />
@@ -284,8 +232,8 @@
     <Key>
       <PropertyRef Name="idNivelAcademico" />
     </Key>
-    <Property Name="idNivelAcademico" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idNivelAcademico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="DatosAcademicos" Relationship="Self.RefNivelAcademico27" FromRole="NivelAcademico" ToRole="DatosAcademicos" />
   </EntityType>
   <EntityType Name="Pais">
@@ -293,7 +241,7 @@
       <PropertyRef Name="idPais" />
     </Key>
     <Property Name="idPais" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="extension" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="DatosAcademicos" Relationship="Self.RefPais28" FromRole="Pais" ToRole="DatosAcademicos" />
     <NavigationProperty Name="Departamento" Relationship="Self.RefPais8" FromRole="Pais" ToRole="Departamento" />
@@ -303,36 +251,26 @@
     <Key>
       <PropertyRef Name="idParentezco" />
     </Key>
-    <Property Name="idParentezco" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idParentezco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="DatoFamiliar" Relationship="Self.RefParentezco24" FromRole="Parentezco" ToRole="DatoFamiliar" />
     <NavigationProperty Name="ReferenciaColaborador" Relationship="Self.RefParentezco17" FromRole="Parentezco" ToRole="ReferenciaColaborador" />
-  </EntityType>
-  <EntityType Name="Permiso">
-    <Key>
-      <PropertyRef Name="idPermiso" />
-    </Key>
-    <Property Name="idPermiso" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Rol" Relationship="Self.PermisoRol" FromRole="Permiso" ToRole="Rol" />
   </EntityType>
   <EntityType Name="Planilla">
     <Key>
       <PropertyRef Name="idPlanilla" />
-      <PropertyRef Name="año" />
-      <PropertyRef Name="mes" />
     </Key>
-    <Property Name="idPlanilla" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="año" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
-    <Property Name="mes" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="idPlanilla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="anio" Type="Int32" Nullable="false" />
+    <Property Name="mes" Type="Int32" Nullable="false" />
     <NavigationProperty Name="DetallePlanilla" Relationship="Self.RefPlanilla52" FromRole="Planilla" ToRole="DetallePlanilla" />
   </EntityType>
   <EntityType Name="Profesion">
     <Key>
       <PropertyRef Name="idProfesion" />
     </Key>
-    <Property Name="idProfesion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idProfesion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefProfesion37" FromRole="Profesion" ToRole="Colaborador" />
     <NavigationProperty Name="DatoFamiliar" Relationship="Self.RefProfesion38" FromRole="Profesion" ToRole="DatoFamiliar" />
     <NavigationProperty Name="ReferenciaColaborador" Relationship="Self.RefProfesion36" FromRole="Profesion" ToRole="ReferenciaColaborador" />
@@ -341,101 +279,134 @@
     <Key>
       <PropertyRef Name="idPuesto" />
     </Key>
-    <Property Name="idPuesto" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="sueldoOrdinario" Type="Decimal" Precision="13" Scale="2" />
-    <Property Name="idArea" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="idPuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sueldoOrdinario" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
+    <Property Name="idArea" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Area" Relationship="Self.RefArea49" FromRole="Puesto" ToRole="Area" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefPuesto46" FromRole="Puesto" ToRole="Colaborador" />
     <NavigationProperty Name="Impuesto" Relationship="Self.PuestoImpuesto" FromRole="Puesto" ToRole="Impuesto" />
   </EntityType>
   <EntityType Name="ReferenciaColaborador">
     <Key>
-      <PropertyRef Name="idColaborador" />
       <PropertyRef Name="idReferencia" />
     </Key>
-    <Property Name="idColaborador" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
-    <Property Name="idReferencia" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="nombre" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="telefono1" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="direccion" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="edad" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="idTipoReferencia" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idParentezco" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="idProfesion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idReferencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="Int32" Nullable="false" />
+    <Property Name="idTipoReferencia" Type="Int32" Nullable="false" />
+    <Property Name="idParentezco" Type="Int32" Nullable="false" />
+    <Property Name="idProfesion" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador15" FromRole="ReferenciaColaborador" ToRole="Colaborador" />
     <NavigationProperty Name="Parentezco" Relationship="Self.RefParentezco17" FromRole="ReferenciaColaborador" ToRole="Parentezco" />
     <NavigationProperty Name="Profesion" Relationship="Self.RefProfesion36" FromRole="ReferenciaColaborador" ToRole="Profesion" />
     <NavigationProperty Name="TipoReferencia" Relationship="Self.RefTipoReferencia16" FromRole="ReferenciaColaborador" ToRole="TipoReferencia" />
   </EntityType>
-  <EntityType Name="Rol">
-    <Key>
-      <PropertyRef Name="idRol" />
-    </Key>
-    <Property Name="idRol" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Usuario" Relationship="Self.RefRol67" FromRole="Rol" ToRole="Usuario" />
-    <NavigationProperty Name="Permiso" Relationship="Self.PermisoRol" FromRole="Rol" ToRole="Permiso" />
-  </EntityType>
   <EntityType Name="Servicio">
     <Key>
       <PropertyRef Name="idServicio" />
     </Key>
-    <Property Name="idServicio" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idServicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="125" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Empresa" Relationship="Self.ServicioEmpresa" FromRole="Servicio" ToRole="Empresa" />
   </EntityType>
   <EntityType Name="TipoCuenta">
     <Key>
       <PropertyRef Name="idTipoCuenta" />
     </Key>
-    <Property Name="idTipoCuenta" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="CuentaDeposito" Relationship="Self.RefTipoCuenta42" FromRole="TipoCuenta" ToRole="CuentaDeposito" />
+    <Property Name="idTipoCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="CuentaEmpresa" Relationship="Self.RefTipoCuenta32" FromRole="TipoCuenta" ToRole="CuentaEmpresa" />
+    <NavigationProperty Name="CuentaDeposito" Relationship="Self.RefTipoCuenta42" FromRole="TipoCuenta" ToRole="CuentaDeposito" />
   </EntityType>
   <EntityType Name="TipoDescuento">
     <Key>
       <PropertyRef Name="idTipoDescuento" />
     </Key>
-    <Property Name="idTipoDescuento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idTipoDescuento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="ColaboradorDescuento" Relationship="Self.RefTipoDescuento57" FromRole="TipoDescuento" ToRole="ColaboradorDescuento" />
   </EntityType>
   <EntityType Name="TipoDireccion">
     <Key>
       <PropertyRef Name="idTipoDireccion" />
     </Key>
-    <Property Name="idTipoDireccion" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idTipoDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Direcciones" Relationship="Self.RefTipoDireccion5" FromRole="TipoDireccion" ToRole="Direcciones" />
   </EntityType>
   <EntityType Name="TipoDocumento">
     <Key>
       <PropertyRef Name="idTipoDocumento" />
     </Key>
-    <Property Name="idTipoDocumento" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="tipoDocumento1" Type="Decimal" Precision="3" Scale="0" />
-    <Property Name="mascara" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="idTipoDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoDocumento1" Type="Int32" Nullable="false" />
+    <Property Name="mascara" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Identificacion" Relationship="Self.RefTipoDocumento59" FromRole="TipoDocumento" ToRole="Identificacion" />
   </EntityType>
   <EntityType Name="TipoReferencia">
     <Key>
       <PropertyRef Name="idTipoReferencia" />
     </Key>
-    <Property Name="idTipoReferencia" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="idTipoReferencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="ReferenciaColaborador" Relationship="Self.RefTipoReferencia16" FromRole="TipoReferencia" ToRole="ReferenciaColaborador" />
   </EntityType>
-  <EntityType Name="Usuario">
+  <EntityType Name="ColaboradorDescuento">
     <Key>
-      <PropertyRef Name="username" />
+      <PropertyRef Name="idColaborador" />
+      <PropertyRef Name="idDescuento" />
+      <PropertyRef Name="idTipoDescuento" />
+      <PropertyRef Name="monto" />
     </Key>
-    <Property Name="username" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="idRol" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
-    <NavigationProperty Name="Colaborador" Relationship="Self.RefUsuario64" FromRole="Usuario" ToRole="Colaborador" />
-    <NavigationProperty Name="Rol" Relationship="Self.RefRol67" FromRole="Usuario" ToRole="Rol" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idDescuento" Type="Int32" Nullable="false" />
+    <Property Name="idTipoDescuento" Type="Int32" Nullable="false" />
+    <Property Name="monto" Type="Decimal" Precision="13" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador56" FromRole="ColaboradorDescuento" ToRole="Colaborador" />
+    <NavigationProperty Name="TipoDescuento" Relationship="Self.RefTipoDescuento57" FromRole="ColaboradorDescuento" ToRole="TipoDescuento" />
+  </EntityType>
+  <EntityType Name="CuentaDeposito">
+    <Key>
+      <PropertyRef Name="idColaborador" />
+      <PropertyRef Name="idTipoCuenta" />
+      <PropertyRef Name="idBanco" />
+    </Key>
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="idTipoCuenta" Type="Int32" Nullable="false" />
+    <Property Name="idBanco" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Banco" Relationship="Self.RefBanco43" FromRole="CuentaDeposito" ToRole="Banco" />
+    <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador39" FromRole="CuentaDeposito" ToRole="Colaborador" />
+    <NavigationProperty Name="TipoCuenta" Relationship="Self.RefTipoCuenta42" FromRole="CuentaDeposito" ToRole="TipoCuenta" />
+  </EntityType>
+  <EntityType Name="CuentaEmpresa">
+    <Key>
+      <PropertyRef Name="idEmpresa" />
+      <PropertyRef Name="idTipoCuenta" />
+      <PropertyRef Name="idBanco" />
+      <PropertyRef Name="noCuenta" />
+    </Key>
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="idTipoCuenta" Type="Int32" Nullable="false" />
+    <Property Name="idBanco" Type="Int32" Nullable="false" />
+    <Property Name="noCuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Banco" Relationship="Self.RefBanco33" FromRole="CuentaEmpresa" ToRole="Banco" />
+    <NavigationProperty Name="Empresa" Relationship="Self.RefEmpresa31" FromRole="CuentaEmpresa" ToRole="Empresa" />
+    <NavigationProperty Name="TipoCuenta" Relationship="Self.RefTipoCuenta32" FromRole="CuentaEmpresa" ToRole="TipoCuenta" />
+  </EntityType>
+  <EntityType Name="EmpresaColaborador">
+    <Key>
+      <PropertyRef Name="idEmpresa" />
+      <PropertyRef Name="idColaborador" />
+    </Key>
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="idColaborador" Type="Int32" Nullable="false" />
+    <Property Name="Activo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Colaborador" Relationship="Self.RefColaborador2" FromRole="EmpresaColaborador" ToRole="Colaborador" />
+    <NavigationProperty Name="Empresa" Relationship="Self.RefEmpresa1" FromRole="EmpresaColaborador" ToRole="Empresa" />
   </EntityType>
   <Association Name="RefArea49">
     <End Role="Area" Type="Self.Area" Multiplicity="1" />
@@ -535,7 +506,7 @@
   </Association>
   <Association Name="RefColaborador39">
     <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
-    <End Role="CuentaDeposito" Type="Self.CuentaDeposito" Multiplicity="0..1" />
+    <End Role="CuentaDeposito" Type="Self.CuentaDeposito" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Colaborador">
         <PropertyRef Name="idColaborador" />
@@ -593,6 +564,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="RefCredencial64">
+    <End Role="Credencial" Type="Self.Credencial" Multiplicity="0..1" />
+    <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Credencial">
+        <PropertyRef Name="usuario" />
+      </Principal>
+      <Dependent Role="Colaborador">
+        <PropertyRef Name="usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="RefEstadoCivil35">
     <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
     <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
@@ -629,66 +612,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="RefUsuario64">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-    <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="username" />
-      </Principal>
-      <Dependent Role="Colaborador">
-        <PropertyRef Name="username" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="RefTipoDescuento57">
-    <End Role="TipoDescuento" Type="Self.TipoDescuento" Multiplicity="1" />
-    <End Role="ColaboradorDescuento" Type="Self.ColaboradorDescuento" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TipoDescuento">
-        <PropertyRef Name="idTipoDescuento" />
-      </Principal>
-      <Dependent Role="ColaboradorDescuento">
-        <PropertyRef Name="idTipoDescuento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="RefTipoCuenta42">
-    <End Role="TipoCuenta" Type="Self.TipoCuenta" Multiplicity="1" />
-    <End Role="CuentaDeposito" Type="Self.CuentaDeposito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TipoCuenta">
-        <PropertyRef Name="idTipoCuenta" />
-      </Principal>
-      <Dependent Role="CuentaDeposito">
-        <PropertyRef Name="idTipoCuenta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="RefEmpresa31">
-    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
-    <End Role="CuentaEmpresa" Type="Self.CuentaEmpresa" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Empresa">
-        <PropertyRef Name="idEmpresa" />
-      </Principal>
-      <Dependent Role="CuentaEmpresa">
-        <PropertyRef Name="idEmpresa" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="RefTipoCuenta32">
-    <End Role="TipoCuenta" Type="Self.TipoCuenta" Multiplicity="1" />
-    <End Role="CuentaEmpresa" Type="Self.CuentaEmpresa" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TipoCuenta">
-        <PropertyRef Name="idTipoCuenta" />
-      </Principal>
-      <Dependent Role="CuentaEmpresa">
-        <PropertyRef Name="idTipoCuenta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="RefParentezco24">
     <End Role="Parentezco" Type="Self.Parentezco" Multiplicity="1" />
     <End Role="DatoFamiliar" Type="Self.DatoFamiliar" Multiplicity="*" />
@@ -718,11 +641,9 @@
     <End Role="DatosAcademicos" Type="Self.DatosAcademicos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Departamento">
-        <PropertyRef Name="idPais" />
         <PropertyRef Name="idDepartamento" />
       </Principal>
       <Dependent Role="DatosAcademicos">
-        <PropertyRef Name="idPais" />
         <PropertyRef Name="idDepartamento" />
       </Dependent>
     </ReferentialConstraint>
@@ -732,13 +653,9 @@
     <End Role="DatosAcademicos" Type="Self.DatosAcademicos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Municipio">
-        <PropertyRef Name="idPais" />
-        <PropertyRef Name="idDepartamento" />
         <PropertyRef Name="idMunicipio" />
       </Principal>
       <Dependent Role="DatosAcademicos">
-        <PropertyRef Name="idPais" />
-        <PropertyRef Name="idDepartamento" />
         <PropertyRef Name="idMunicipio" />
       </Dependent>
     </ReferentialConstraint>
@@ -756,7 +673,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="RefPais28">
-    <End Role="Pais" Type="Self.Pais" Multiplicity="0..1" />
+    <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
     <End Role="DatosAcademicos" Type="Self.DatosAcademicos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Pais">
@@ -768,15 +685,13 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="RefDepartamento19">
-    <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
     <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Departamento">
-        <PropertyRef Name="idPais" />
         <PropertyRef Name="idDepartamento" />
       </Principal>
       <Dependent Role="Direcciones">
-        <PropertyRef Name="idPais" />
         <PropertyRef Name="idDepartamento" />
       </Dependent>
     </ReferentialConstraint>
@@ -786,11 +701,9 @@
     <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Departamento">
-        <PropertyRef Name="idPais" />
         <PropertyRef Name="idDepartamento" />
       </Principal>
       <Dependent Role="Municipio">
-        <PropertyRef Name="idPais" />
         <PropertyRef Name="idDepartamento" />
       </Dependent>
     </ReferentialConstraint>
@@ -825,34 +738,26 @@
     <ReferentialConstraint>
       <Principal Role="Planilla">
         <PropertyRef Name="idPlanilla" />
-        <PropertyRef Name="año" />
-        <PropertyRef Name="mes" />
       </Principal>
       <Dependent Role="DetallePlanilla">
         <PropertyRef Name="idPlanilla" />
-        <PropertyRef Name="año" />
-        <PropertyRef Name="mes" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="RefMunicipio20">
-    <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
     <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Municipio">
-        <PropertyRef Name="idPais" />
-        <PropertyRef Name="idDepartamento" />
         <PropertyRef Name="idMunicipio" />
       </Principal>
       <Dependent Role="Direcciones">
-        <PropertyRef Name="idPais" />
-        <PropertyRef Name="idDepartamento" />
         <PropertyRef Name="idMunicipio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="RefPais18">
-    <End Role="Pais" Type="Self.Pais" Multiplicity="0..1" />
+    <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
     <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Pais">
@@ -883,6 +788,18 @@
         <PropertyRef Name="idEmpresa" />
       </Principal>
       <Dependent Role="EmpresaColaborador">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefEmpresa31">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="CuentaEmpresa" Type="Self.CuentaEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="idEmpresa" />
+      </Principal>
+      <Dependent Role="CuentaEmpresa">
         <PropertyRef Name="idEmpresa" />
       </Dependent>
     </ReferentialConstraint>
@@ -935,25 +852,45 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="RefRol67">
-    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+  <Association Name="RefTipoCuenta32">
+    <End Role="TipoCuenta" Type="Self.TipoCuenta" Multiplicity="1" />
+    <End Role="CuentaEmpresa" Type="Self.CuentaEmpresa" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Rol">
-        <PropertyRef Name="idRol" />
+      <Principal Role="TipoCuenta">
+        <PropertyRef Name="idTipoCuenta" />
       </Principal>
-      <Dependent Role="Usuario">
-        <PropertyRef Name="idRol" />
+      <Dependent Role="CuentaEmpresa">
+        <PropertyRef Name="idTipoCuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTipoCuenta42">
+    <End Role="TipoCuenta" Type="Self.TipoCuenta" Multiplicity="1" />
+    <End Role="CuentaDeposito" Type="Self.CuentaDeposito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCuenta">
+        <PropertyRef Name="idTipoCuenta" />
+      </Principal>
+      <Dependent Role="CuentaDeposito">
+        <PropertyRef Name="idTipoCuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTipoDescuento57">
+    <End Role="TipoDescuento" Type="Self.TipoDescuento" Multiplicity="1" />
+    <End Role="ColaboradorDescuento" Type="Self.ColaboradorDescuento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDescuento">
+        <PropertyRef Name="idTipoDescuento" />
+      </Principal>
+      <Dependent Role="ColaboradorDescuento">
+        <PropertyRef Name="idTipoDescuento" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="BonoColaborador">
     <End Role="Bonos" Type="Self.Bonos" Multiplicity="*" />
     <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
-  </Association>
-  <Association Name="PermisoRol">
-    <End Role="Permiso" Type="Self.Permiso" Multiplicity="*" />
-    <End Role="Rol" Type="Self.Rol" Multiplicity="*" />
   </Association>
   <Association Name="PuestoImpuesto">
     <End Role="Impuesto" Type="Self.Impuesto" Multiplicity="*" />
@@ -963,14 +900,12 @@
     <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
     <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="DB_LABORAGT_Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="LABORAGT_Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Area" EntityType="Self.Area" />
     <EntitySet Name="Banco" EntityType="Self.Banco" />
     <EntitySet Name="Bonos" EntityType="Self.Bonos" />
     <EntitySet Name="Colaborador" EntityType="Self.Colaborador" />
-    <EntitySet Name="ColaboradorDescuento" EntityType="Self.ColaboradorDescuento" />
-    <EntitySet Name="CuentaDeposito" EntityType="Self.CuentaDeposito" />
-    <EntitySet Name="CuentaEmpresa" EntityType="Self.CuentaEmpresa" />
+    <EntitySet Name="Credencial" EntityType="Self.Credencial" />
     <EntitySet Name="DatoFamiliar" EntityType="Self.DatoFamiliar" />
     <EntitySet Name="DatosAcademicos" EntityType="Self.DatosAcademicos" />
     <EntitySet Name="DatosLaborales" EntityType="Self.DatosLaborales" />
@@ -978,7 +913,6 @@
     <EntitySet Name="DetallePlanilla" EntityType="Self.DetallePlanilla" />
     <EntitySet Name="Direcciones" EntityType="Self.Direcciones" />
     <EntitySet Name="Empresa" EntityType="Self.Empresa" />
-    <EntitySet Name="EmpresaColaborador" EntityType="Self.EmpresaColaborador" />
     <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" />
     <EntitySet Name="formaPago" EntityType="Self.formaPago" />
     <EntitySet Name="Identificacion" EntityType="Self.Identificacion" />
@@ -987,19 +921,20 @@
     <EntitySet Name="NivelAcademico" EntityType="Self.NivelAcademico" />
     <EntitySet Name="Pais" EntityType="Self.Pais" />
     <EntitySet Name="Parentezco" EntityType="Self.Parentezco" />
-    <EntitySet Name="Permiso" EntityType="Self.Permiso" />
     <EntitySet Name="Planilla" EntityType="Self.Planilla" />
     <EntitySet Name="Profesion" EntityType="Self.Profesion" />
     <EntitySet Name="Puesto" EntityType="Self.Puesto" />
     <EntitySet Name="ReferenciaColaborador" EntityType="Self.ReferenciaColaborador" />
-    <EntitySet Name="Rol" EntityType="Self.Rol" />
     <EntitySet Name="Servicio" EntityType="Self.Servicio" />
     <EntitySet Name="TipoCuenta" EntityType="Self.TipoCuenta" />
     <EntitySet Name="TipoDescuento" EntityType="Self.TipoDescuento" />
     <EntitySet Name="TipoDireccion" EntityType="Self.TipoDireccion" />
     <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" />
     <EntitySet Name="TipoReferencia" EntityType="Self.TipoReferencia" />
-    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="ColaboradorDescuento" EntityType="Self.ColaboradorDescuento" />
+    <EntitySet Name="CuentaDeposito" EntityType="Self.CuentaDeposito" />
+    <EntitySet Name="CuentaEmpresa" EntityType="Self.CuentaEmpresa" />
+    <EntitySet Name="EmpresaColaborador" EntityType="Self.EmpresaColaborador" />
     <AssociationSet Name="RefArea49" Association="Self.RefArea49">
       <End Role="Area" EntitySet="Area" />
       <End Role="Puesto" EntitySet="Puesto" />
@@ -1052,6 +987,10 @@
       <End Role="Colaborador" EntitySet="Colaborador" />
       <End Role="Direcciones" EntitySet="Direcciones" />
     </AssociationSet>
+    <AssociationSet Name="RefCredencial64" Association="Self.RefCredencial64">
+      <End Role="Credencial" EntitySet="Credencial" />
+      <End Role="Colaborador" EntitySet="Colaborador" />
+    </AssociationSet>
     <AssociationSet Name="RefEstadoCivil35" Association="Self.RefEstadoCivil35">
       <End Role="EstadoCivil" EntitySet="EstadoCivil" />
       <End Role="Colaborador" EntitySet="Colaborador" />
@@ -1063,26 +1002,6 @@
     <AssociationSet Name="RefPuesto46" Association="Self.RefPuesto46">
       <End Role="Puesto" EntitySet="Puesto" />
       <End Role="Colaborador" EntitySet="Colaborador" />
-    </AssociationSet>
-    <AssociationSet Name="RefUsuario64" Association="Self.RefUsuario64">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Colaborador" EntitySet="Colaborador" />
-    </AssociationSet>
-    <AssociationSet Name="RefTipoDescuento57" Association="Self.RefTipoDescuento57">
-      <End Role="TipoDescuento" EntitySet="TipoDescuento" />
-      <End Role="ColaboradorDescuento" EntitySet="ColaboradorDescuento" />
-    </AssociationSet>
-    <AssociationSet Name="RefTipoCuenta42" Association="Self.RefTipoCuenta42">
-      <End Role="TipoCuenta" EntitySet="TipoCuenta" />
-      <End Role="CuentaDeposito" EntitySet="CuentaDeposito" />
-    </AssociationSet>
-    <AssociationSet Name="RefEmpresa31" Association="Self.RefEmpresa31">
-      <End Role="Empresa" EntitySet="Empresa" />
-      <End Role="CuentaEmpresa" EntitySet="CuentaEmpresa" />
-    </AssociationSet>
-    <AssociationSet Name="RefTipoCuenta32" Association="Self.RefTipoCuenta32">
-      <End Role="TipoCuenta" EntitySet="TipoCuenta" />
-      <End Role="CuentaEmpresa" EntitySet="CuentaEmpresa" />
     </AssociationSet>
     <AssociationSet Name="RefParentezco24" Association="Self.RefParentezco24">
       <End Role="Parentezco" EntitySet="Parentezco" />
@@ -1144,6 +1063,10 @@
       <End Role="Empresa" EntitySet="Empresa" />
       <End Role="EmpresaColaborador" EntitySet="EmpresaColaborador" />
     </AssociationSet>
+    <AssociationSet Name="RefEmpresa31" Association="Self.RefEmpresa31">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="CuentaEmpresa" EntitySet="CuentaEmpresa" />
+    </AssociationSet>
     <AssociationSet Name="RefTipoDocumento59" Association="Self.RefTipoDocumento59">
       <End Role="TipoDocumento" EntitySet="TipoDocumento" />
       <End Role="Identificacion" EntitySet="Identificacion" />
@@ -1160,17 +1083,21 @@
       <End Role="TipoReferencia" EntitySet="TipoReferencia" />
       <End Role="ReferenciaColaborador" EntitySet="ReferenciaColaborador" />
     </AssociationSet>
-    <AssociationSet Name="RefRol67" Association="Self.RefRol67">
-      <End Role="Rol" EntitySet="Rol" />
-      <End Role="Usuario" EntitySet="Usuario" />
+    <AssociationSet Name="RefTipoCuenta32" Association="Self.RefTipoCuenta32">
+      <End Role="TipoCuenta" EntitySet="TipoCuenta" />
+      <End Role="CuentaEmpresa" EntitySet="CuentaEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="RefTipoCuenta42" Association="Self.RefTipoCuenta42">
+      <End Role="TipoCuenta" EntitySet="TipoCuenta" />
+      <End Role="CuentaDeposito" EntitySet="CuentaDeposito" />
+    </AssociationSet>
+    <AssociationSet Name="RefTipoDescuento57" Association="Self.RefTipoDescuento57">
+      <End Role="TipoDescuento" EntitySet="TipoDescuento" />
+      <End Role="ColaboradorDescuento" EntitySet="ColaboradorDescuento" />
     </AssociationSet>
     <AssociationSet Name="BonoColaborador" Association="Self.BonoColaborador">
       <End Role="Bonos" EntitySet="Bonos" />
       <End Role="Colaborador" EntitySet="Colaborador" />
-    </AssociationSet>
-    <AssociationSet Name="PermisoRol" Association="Self.PermisoRol">
-      <End Role="Permiso" EntitySet="Permiso" />
-      <End Role="Rol" EntitySet="Rol" />
     </AssociationSet>
     <AssociationSet Name="PuestoImpuesto" Association="Self.PuestoImpuesto">
       <End Role="Impuesto" EntitySet="Impuesto" />

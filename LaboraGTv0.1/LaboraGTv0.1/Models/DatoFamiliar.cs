@@ -14,12 +14,12 @@ namespace LaboraGTv0._1.Models
     
     public partial class DatoFamiliar
     {
-        public decimal idColaborador { get; set; }
-        public decimal idDatoFamiliar { get; set; }
-        public decimal idParentezco { get; set; }
-        public decimal idProfesion { get; set; }
+        public int idColaborador { get; set; }
+        public int idDatoFamiliar { get; set; }
+        public int idParentezco { get; set; }
+        public int idProfesion { get; set; }
         public string nombre { get; set; }
-        public Nullable<decimal> edad { get; set; }
+        public int edad { get; set; }
         public string telefono { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }

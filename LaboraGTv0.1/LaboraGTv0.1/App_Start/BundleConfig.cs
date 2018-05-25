@@ -13,9 +13,11 @@ namespace LaboraGT_Dev
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/jquery.js"));
             bundles.Add(new ScriptBundle("~/bundles/sweetalert").Include("~/Scripts/sweetalert.js"));
+            bundles.Add(new ScriptBundle("~/bundles/calendar").Include("~/Scripts/calendar.js"));
 
 
             bundles.Add(new StyleBundle("~/Content/semantic").Include("~/Content/SemanticUI/semantic.css"));
+            bundles.Add(new StyleBundle("~/Content/calendar").Include("~/Content/SemanticUI/calendar.css"));
 
 
             /*bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

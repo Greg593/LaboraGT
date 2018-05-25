@@ -20,7 +20,7 @@ namespace LaboraGTv0._1.Models
             this.DetallePlanilla = new HashSet<DetallePlanilla>();
         }
     
-        public decimal idFormaPago { get; set; }
+        public int idFormaPago { get; set; }
         public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

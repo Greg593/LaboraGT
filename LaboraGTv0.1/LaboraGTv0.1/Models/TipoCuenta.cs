@@ -17,16 +17,16 @@ namespace LaboraGTv0._1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TipoCuenta()
         {
-            this.CuentaDeposito = new HashSet<CuentaDeposito>();
             this.CuentaEmpresa = new HashSet<CuentaEmpresa>();
+            this.CuentaDeposito = new HashSet<CuentaDeposito>();
         }
     
-        public decimal idTipoCuenta { get; set; }
+        public int idTipoCuenta { get; set; }
         public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CuentaDeposito> CuentaDeposito { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CuentaEmpresa> CuentaEmpresa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CuentaDeposito> CuentaDeposito { get; set; }
     }
 }

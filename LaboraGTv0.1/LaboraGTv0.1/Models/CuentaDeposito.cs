@@ -14,9 +14,9 @@ namespace LaboraGTv0._1.Models
     
     public partial class CuentaDeposito
     {
-        public decimal idColaborador { get; set; }
-        public decimal idTipoCuenta { get; set; }
-        public decimal idBanco { get; set; }
+        public int idColaborador { get; set; }
+        public int idTipoCuenta { get; set; }
+        public int idBanco { get; set; }
     
         public virtual Banco Banco { get; set; }
         public virtual Colaborador Colaborador { get; set; }

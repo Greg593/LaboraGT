@@ -14,8 +14,8 @@ namespace LaboraGTv0._1.Models
     
     public partial class EmpresaColaborador
     {
-        public decimal idEmpresa { get; set; }
-        public decimal idColaborador { get; set; }
+        public int idEmpresa { get; set; }
+        public int idColaborador { get; set; }
         public string Activo { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }

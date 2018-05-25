@@ -1,265 +1,32 @@
-/*
- * ER/Studio 8.0 SQL Code Generation
- * Company :      GregSoft
- * Project :      RRHH v2.DM1
- * Author :       Rino
- *
- * Date Created : Tuesday, May 22, 2018 16:12:54
- * Target DBMS : Microsoft SQL Server 2008
- */
 
-IF OBJECT_ID('Area') IS NOT NULL
-BEGIN
-    DROP TABLE Area
-    PRINT '<<< DROPPED TABLE Area >>>'
-END
-go
-IF OBJECT_ID('Banco') IS NOT NULL
-BEGIN
-    DROP TABLE Banco
-    PRINT '<<< DROPPED TABLE Banco >>>'
-END
-go
-IF OBJECT_ID('BonoColaborador') IS NOT NULL
-BEGIN
-    DROP TABLE BonoColaborador
-    PRINT '<<< DROPPED TABLE BonoColaborador >>>'
-END
-go
-IF OBJECT_ID('Bonos') IS NOT NULL
-BEGIN
-    DROP TABLE Bonos
-    PRINT '<<< DROPPED TABLE Bonos >>>'
-END
-go
-IF OBJECT_ID('Colaborador') IS NOT NULL
-BEGIN
-    DROP TABLE Colaborador
-    PRINT '<<< DROPPED TABLE Colaborador >>>'
-END
-go
-IF OBJECT_ID('ColaboradorDescuento') IS NOT NULL
-BEGIN
-    DROP TABLE ColaboradorDescuento
-    PRINT '<<< DROPPED TABLE ColaboradorDescuento >>>'
-END
-go
-IF OBJECT_ID('CuentaDeposito') IS NOT NULL
-BEGIN
-    DROP TABLE CuentaDeposito
-    PRINT '<<< DROPPED TABLE CuentaDeposito >>>'
-END
-go
-IF OBJECT_ID('CuentaEmpresa') IS NOT NULL
-BEGIN
-    DROP TABLE CuentaEmpresa
-    PRINT '<<< DROPPED TABLE CuentaEmpresa >>>'
-END
-go
-IF OBJECT_ID('DatoFamiliar') IS NOT NULL
-BEGIN
-    DROP TABLE DatoFamiliar
-    PRINT '<<< DROPPED TABLE DatoFamiliar >>>'
-END
-go
-IF OBJECT_ID('DatosAcademicos') IS NOT NULL
-BEGIN
-    DROP TABLE DatosAcademicos
-    PRINT '<<< DROPPED TABLE DatosAcademicos >>>'
-END
-go
-IF OBJECT_ID('DatosLaborales') IS NOT NULL
-BEGIN
-    DROP TABLE DatosLaborales
-    PRINT '<<< DROPPED TABLE DatosLaborales >>>'
-END
-go
-IF OBJECT_ID('Departamento') IS NOT NULL
-BEGIN
-    DROP TABLE Departamento
-    PRINT '<<< DROPPED TABLE Departamento >>>'
-END
-go
-IF OBJECT_ID('DetallePlanilla') IS NOT NULL
-BEGIN
-    DROP TABLE DetallePlanilla
-    PRINT '<<< DROPPED TABLE DetallePlanilla >>>'
-END
-go
-IF OBJECT_ID('Direcciones') IS NOT NULL
-BEGIN
-    DROP TABLE Direcciones
-    PRINT '<<< DROPPED TABLE Direcciones >>>'
-END
-go
-IF OBJECT_ID('Empresa') IS NOT NULL
-BEGIN
-    DROP TABLE Empresa
-    PRINT '<<< DROPPED TABLE Empresa >>>'
-END
-go
-IF OBJECT_ID('EmpresaColaborador') IS NOT NULL
-BEGIN
-    DROP TABLE EmpresaColaborador
-    PRINT '<<< DROPPED TABLE EmpresaColaborador >>>'
-END
-go
-IF OBJECT_ID('EstadoCivil') IS NOT NULL
-BEGIN
-    DROP TABLE EstadoCivil
-    PRINT '<<< DROPPED TABLE EstadoCivil >>>'
-END
-go
-IF OBJECT_ID('formaPago') IS NOT NULL
-BEGIN
-    DROP TABLE formaPago
-    PRINT '<<< DROPPED TABLE formaPago >>>'
-END
-go
-IF OBJECT_ID('Identificacion') IS NOT NULL
-BEGIN
-    DROP TABLE Identificacion
-    PRINT '<<< DROPPED TABLE Identificacion >>>'
-END
-go
-IF OBJECT_ID('Impuesto') IS NOT NULL
-BEGIN
-    DROP TABLE Impuesto
-    PRINT '<<< DROPPED TABLE Impuesto >>>'
-END
-go
-IF OBJECT_ID('Municipio') IS NOT NULL
-BEGIN
-    DROP TABLE Municipio
-    PRINT '<<< DROPPED TABLE Municipio >>>'
-END
-go
-IF OBJECT_ID('NivelAcademico') IS NOT NULL
-BEGIN
-    DROP TABLE NivelAcademico
-    PRINT '<<< DROPPED TABLE NivelAcademico >>>'
-END
-go
-IF OBJECT_ID('Pais') IS NOT NULL
-BEGIN
-    DROP TABLE Pais
-    PRINT '<<< DROPPED TABLE Pais >>>'
-END
-go
-IF OBJECT_ID('Parentezco') IS NOT NULL
-BEGIN
-    DROP TABLE Parentezco
-    PRINT '<<< DROPPED TABLE Parentezco >>>'
-END
-go
-IF OBJECT_ID('Permiso') IS NOT NULL
-BEGIN
-    DROP TABLE Permiso
-    PRINT '<<< DROPPED TABLE Permiso >>>'
-END
-go
-IF OBJECT_ID('PermisoRol') IS NOT NULL
-BEGIN
-    DROP TABLE PermisoRol
-    PRINT '<<< DROPPED TABLE PermisoRol >>>'
-END
-go
-IF OBJECT_ID('Planilla') IS NOT NULL
-BEGIN
-    DROP TABLE Planilla
-    PRINT '<<< DROPPED TABLE Planilla >>>'
-END
-go
-IF OBJECT_ID('Profesion') IS NOT NULL
-BEGIN
-    DROP TABLE Profesion
-    PRINT '<<< DROPPED TABLE Profesion >>>'
-END
-go
-IF OBJECT_ID('Puesto') IS NOT NULL
-BEGIN
-    DROP TABLE Puesto
-    PRINT '<<< DROPPED TABLE Puesto >>>'
-END
-go
-IF OBJECT_ID('PuestoImpuesto') IS NOT NULL
-BEGIN
-    DROP TABLE PuestoImpuesto
-    PRINT '<<< DROPPED TABLE PuestoImpuesto >>>'
-END
-go
-IF OBJECT_ID('ReferenciaColaborador') IS NOT NULL
-BEGIN
-    DROP TABLE ReferenciaColaborador
-    PRINT '<<< DROPPED TABLE ReferenciaColaborador >>>'
-END
-go
-IF OBJECT_ID('Rol') IS NOT NULL
-BEGIN
-    DROP TABLE Rol
-    PRINT '<<< DROPPED TABLE Rol >>>'
-END
-go
-IF OBJECT_ID('Servicio') IS NOT NULL
-BEGIN
-    DROP TABLE Servicio
-    PRINT '<<< DROPPED TABLE Servicio >>>'
-END
-go
-IF OBJECT_ID('ServicioEmpresa') IS NOT NULL
-BEGIN
-    DROP TABLE ServicioEmpresa
-    PRINT '<<< DROPPED TABLE ServicioEmpresa >>>'
-END
-go
-IF OBJECT_ID('TipoCuenta') IS NOT NULL
-BEGIN
-    DROP TABLE TipoCuenta
-    PRINT '<<< DROPPED TABLE TipoCuenta >>>'
-END
-go
-IF OBJECT_ID('TipoDescuento') IS NOT NULL
-BEGIN
-    DROP TABLE TipoDescuento
-    PRINT '<<< DROPPED TABLE TipoDescuento >>>'
-END
-go
-IF OBJECT_ID('TipoDireccion') IS NOT NULL
-BEGIN
-    DROP TABLE TipoDireccion
-    PRINT '<<< DROPPED TABLE TipoDireccion >>>'
-END
-go
-IF OBJECT_ID('TipoDocumento') IS NOT NULL
-BEGIN
-    DROP TABLE TipoDocumento
-    PRINT '<<< DROPPED TABLE TipoDocumento >>>'
-END
-go
-IF OBJECT_ID('TipoReferencia') IS NOT NULL
-BEGIN
-    DROP TABLE TipoReferencia
-    PRINT '<<< DROPPED TABLE TipoReferencia >>>'
-END
-go
-IF OBJECT_ID('Usuario') IS NOT NULL
-BEGIN
-    DROP TABLE Usuario
-    PRINT '<<< DROPPED TABLE Usuario >>>'
-END
-go
-/* 
- * TABLE: Area 
- */
+--
+-- ER/Studio 8.0 SQL Code Generation
+-- Company :      GregSoft
+-- Project :      RRHH v2.DM1
+-- Author :       Rino
+--
+-- Date Created : Monday, February 26, 2018 18:12:04
+-- Target DBMS : Oracle 11g
+--
+
+
+ GO
+CREATE DATABASE LABORAGT;
+ GO
+ GO
+ USE LABORAGT;
+ GO
+
+-- 
+-- TABLE: Area 
+--
 
 CREATE TABLE Area(
-    idArea         numeric(3, 0)    NOT NULL,
-    Descripcion    varchar(40)      NULL,
-    CONSTRAINT PK4 PRIMARY KEY NONCLUSTERED (idArea)
+    idArea        int    NOT NULL identity(1,1),
+    Descripcion    int not null,
+    CONSTRAINT PK4 PRIMARY KEY (idArea)
 )
 go
-
-
 
 IF OBJECT_ID('Area') IS NOT NULL
     PRINT '<<< CREATED TABLE Area >>>'
@@ -272,9 +39,10 @@ go
  */
 
 CREATE TABLE Banco(
-    idBanco        numeric(3, 0)    NOT NULL,
-    descripcion    varchar(40)      NULL,
-    CONSTRAINT PK25 PRIMARY KEY NONCLUSTERED (idBanco)
+
+    idBanco        int NOT NULL identity(1,1),
+    descripcion    VARCHAR(40) not null,
+    CONSTRAINT PK25 PRIMARY KEY (idBanco)
 )
 go
 
@@ -291,9 +59,9 @@ go
  */
 
 CREATE TABLE BonoColaborador(
-    idBono           numeric(3, 0)     NOT NULL,
-    idColaborador    numeric(15, 0)    NOT NULL,
-    CONSTRAINT PK34 PRIMARY KEY NONCLUSTERED (idBono, idColaborador)
+    idBono           int     NOT NULL,
+    idColaborador    int    NOT NULL,
+    -- CONSTRAINT PK34 PRIMARY KEY (idBono, idColaborador)
 )
 go
 
@@ -310,10 +78,10 @@ go
  */
 
 CREATE TABLE Bonos(
-    idBono         numeric(3, 0)     NOT NULL,
-    descripcion    varchar(40)       NULL,
-    monto          numeric(13, 2)    NULL,
-    CONSTRAINT PK33 PRIMARY KEY NONCLUSTERED (idBono)
+    idBono         int     NOT NULL identity(1,1),
+    descripcion    VARCHAR(40) not null,
+    monto          decimal(13, 2) not null,
+    CONSTRAINT PK33 PRIMARY KEY (idBono)
 )
 go
 
@@ -330,20 +98,20 @@ go
  */
 
 CREATE TABLE Colaborador(
-    idColaborador      numeric(15, 0)    NOT NULL,
-    nombre1            varchar(30)       NULL,
-    nombre2            varchar(30)       NULL,
-    nombre3            varchar(30)       NULL,
-    apellido1          varchar(30)       NULL,
-    apellido2          varchar(30)       NULL,
-    apellido3          varchar(30)       NULL,
-    fechaNacimiento    date              NULL,
-    sexo               varchar(1)        NULL,
-    idEstadoCivil      numeric(3, 0)     NOT NULL,
-    idProfesion        numeric(3, 0)     NOT NULL,
-    idPuesto           numeric(3, 0)     NOT NULL,
-    user               varchar(10)       NOT NULL,
-    CONSTRAINT PK7 PRIMARY KEY NONCLUSTERED (idColaborador)
+    idColaborador      int   NOT NULL identity(1,1),
+    nombre1            VARCHAR(45) not null,
+    nombre2            VARCHAR(45),
+    nombre3            VARCHAR(45) ,
+    apellido1          VARCHAR(45) not null,
+    apellido2          VARCHAR(45),
+    apellido3          VARCHAR(45),
+    fechaNacimiento    DATE not null,
+    sexo               VARCHAR(1) not null,
+    idEstadoCivil      int     NOT NULL,
+    idProfesion        int     NOT NULL,
+    idPuesto           int     NOT NULL,
+    usuario            VARCHAR(45)     NOT NULL,
+    CONSTRAINT PK7 PRIMARY KEY (idColaborador)
 )
 go
 
@@ -360,15 +128,13 @@ go
  */
 
 CREATE TABLE ColaboradorDescuento(
-    idColaborador      numeric(15, 0)    NOT NULL,
-    idDescuento        numeric(3, 0)     NOT NULL,
-    idTipoDescuento    numeric(3, 0)     NOT NULL,
-    monto              numeric(13, 2)    NULL,
-    CONSTRAINT PK40 PRIMARY KEY NONCLUSTERED (idColaborador, idDescuento)
+    idColaborador      int    NOT NULL,
+    idDescuento       int     NOT NULL,
+    idTipoDescuento   int     NOT NULL,
+    monto              decimal(13, 2) not null,
+    -- CONSTRAINT PK40 PRIMARY KEY (idColaborador)
 )
 go
-
-
 
 IF OBJECT_ID('ColaboradorDescuento') IS NOT NULL
     PRINT '<<< CREATED TABLE ColaboradorDescuento >>>'
@@ -376,19 +142,27 @@ ELSE
     PRINT '<<< FAILED CREATING TABLE ColaboradorDescuento >>>'
 go
 
+
+
+CREATE TABLE Credencial(
+    usuario     VARCHAR(45)    NOT NULL,
+    passw    VARCHAR(45) not null,
+    CONSTRAINT PK45 PRIMARY KEY (usuario)
+)
+;
+
+
 /* 
  * TABLE: CuentaDeposito 
  */
 
 CREATE TABLE CuentaDeposito(
-    idColaborador    numeric(15, 0)    NOT NULL,
-    idTipoCuenta     numeric(2, 0)     NOT NULL,
-    idBanco          numeric(3, 0)     NOT NULL,
-    CONSTRAINT PK32 PRIMARY KEY NONCLUSTERED (idColaborador)
+    idColaborador    int    NOT NULL,
+    idTipoCuenta    int     NOT NULL,
+    idBanco         int     NOT NULL,
+   --  CONSTRAINT PK32 PRIMARY KEY (idColaborador)
 )
 go
-
-
 
 IF OBJECT_ID('CuentaDeposito') IS NOT NULL
     PRINT '<<< CREATED TABLE CuentaDeposito >>>'
@@ -401,11 +175,11 @@ go
  */
 
 CREATE TABLE CuentaEmpresa(
-    idEmpresa       numeric(5, 0)    NOT NULL,
-    idTipoCuenta    numeric(2, 0)    NOT NULL,
-    idBanco         numeric(3, 0)    NOT NULL,
-    noCuenta        varchar(20)      NULL,
-    CONSTRAINT PK24 PRIMARY KEY NONCLUSTERED (idEmpresa)
+    idEmpresa       int   NOT NULL,
+    idTipoCuenta   int    NOT NULL,
+    idBanco        int    NOT NULL,
+    noCuenta        VARCHAR(20) not null,
+   -- CONSTRAINT PK24 PRIMARY KEY (idEmpresa)
 )
 go
 
@@ -422,14 +196,14 @@ go
  */
 
 CREATE TABLE DatoFamiliar(
-    idColaborador     numeric(15, 0)    NOT NULL,
-    idDatoFamiliar    numeric(3, 0)     NOT NULL,
-    idParentezco      numeric(3, 0)     NOT NULL,
-    idProfesion       numeric(3, 0)     NOT NULL,
-    nombre            varchar(80)       NULL,
-    edad              numeric(3, 0)     NULL,
-    telefono          varchar(15)       NULL,
-    CONSTRAINT PK20 PRIMARY KEY NONCLUSTERED (idColaborador, idDatoFamiliar)
+    idColaborador     int    NOT NULL,
+    idDatoFamiliar   int identity(1,1)    NOT NULL,
+    idParentezco     int     NOT NULL,
+    idProfesion      int     NOT NULL,
+    nombre            VARCHAR(80) not null,
+    edad             int not null,
+    telefono          VARCHAR(15) not null,
+    CONSTRAINT PK20 PRIMARY KEY (idDatoFamiliar)
 )
 go
 
@@ -446,19 +220,19 @@ go
  */
 
 CREATE TABLE DatosAcademicos(
-    idColaborador           numeric(15, 0)    NOT NULL,
-    idAdemicoColaborador    numeric(3, 0)     NOT NULL,
-    idNivelAcademico        numeric(3, 0)     NOT NULL,
-    nombreInstitucion       varchar(60)       NULL,
-    fechaInicio             date              NULL,
-    fechaFinalizo           date              NULL,
-    telefono                varchar(15)       NULL,
-    direccion               varchar(80)       NULL,
-    observacion             varchar(200)      NULL,
-    idPais                  varchar(3)        NULL,
-    idDepartamento          numeric(3, 0)     NULL,
-    idMunicipio             numeric(3, 0)     NULL,
-    CONSTRAINT PK22 PRIMARY KEY NONCLUSTERED (idColaborador, idAdemicoColaborador)
+    idColaborador           int    NOT NULL,
+    idAcademicoColaborador   int identity(1,1)     NOT NULL,
+    idNivelAcademico       int     NOT NULL,
+    nombreInstitucion       VARCHAR(60) not null,
+    fechaInicio             DATE not null,
+    fechaFinalizo           DATE not null,
+    telefono                VARCHAR(15) not null,
+    direccion               VARCHAR(80) not null,
+    observacion             VARCHAR(200),
+    idPais                  VARCHAR(3) not null,
+    idDepartamento          int,
+    idMunicipio             int,
+    CONSTRAINT PK22 PRIMARY KEY (idAcademicoColaborador)
 )
 go
 
@@ -475,17 +249,17 @@ go
  */
 
 CREATE TABLE DatosLaborales(
-    idColaborador    numeric(15, 0)    NOT NULL,
-    idLaboral        numeric(3, 0)     NOT NULL,
-    Empresa          varchar(80)       NULL,
-    CargoInicial     varchar(40)       NULL,
-    CargoFinal       varchar(40)       NULL,
-    Telefono         varchar(15)       NULL,
-    JefeInmediato    varchar(80)       NULL,
-    FechaInicio      date              NULL,
-    FechaFinal       date              NULL,
-    MotivoRetiro     varchar(200)      NULL,
-    CONSTRAINT PK26 PRIMARY KEY NONCLUSTERED (idColaborador, idLaboral)
+    idColaborador    int    NOT NULL,
+    idLaboral        int     NOT NULL identity(1,1),
+    Empresa          VARCHAR(80) not null,
+    CargoInicial     VARCHAR(40) not null,
+    CargoFinal       VARCHAR(40) not null,
+    Telefono         VARCHAR(15),
+    JefeInmediato    VARCHAR(80) not null,
+    FechaInicio      DATE not null,
+    FechaFinal       DATE not null,
+    MotivoRetiro     VARCHAR(200) not null,
+    CONSTRAINT PK26 PRIMARY KEY (idLaboral)
 )
 go
 
@@ -502,10 +276,10 @@ go
  */
 
 CREATE TABLE Departamento(
-    idPais            varchar(3)       NOT NULL,
-    idDepartamento    numeric(3, 0)    NOT NULL,
-    descripcion       varchar(40)      NULL,
-    CONSTRAINT PK12 PRIMARY KEY NONCLUSTERED (idPais, idDepartamento)
+    idPais            VARCHAR(3)     NOT NULL,
+    idDepartamento    int    NOT NULL identity(1,1),
+    descripcion       VARCHAR(40) not null,
+    CONSTRAINT PK12 PRIMARY KEY (idDepartamento)
 )
 go
 
@@ -522,19 +296,19 @@ go
  */
 
 CREATE TABLE DetallePlanilla(
-    idPlanilla        numeric(15, 0)    NOT NULL,
-    idColaborador     numeric(15, 0)    NOT NULL,
-    idFormaPago       numeric(3, 0)     NOT NULL,
-    año               numeric(4, 0)     NOT NULL,
-    mes               numeric(2, 0)     NOT NULL,
-    correlativo       numeric(15, 0)    NOT NULL,
-    Ordinario         numeric(13, 2)    NULL,
-    Bonificaciones    numeric(13, 2)    NULL,
-    Descuentos        numeric(13, 2)    NULL,
-    Impuestos         numeric(13, 2)    NULL,
-    Extras            numeric(13, 2)    NULL,
-    Total             numeric(13, 2)    NULL,
-    CONSTRAINT PK37 PRIMARY KEY NONCLUSTERED (idPlanilla, idColaborador, idFormaPago, año, mes, correlativo)
+    idPlanilla        int    NOT NULL,
+    idColaborador     int    NOT NULL,
+    idFormaPago      int     NOT NULL,
+    anio              int     NOT NULL,
+    mes              int     NOT NULL,
+    correlativo       int    NOT NULL identity(1,1),
+    Ordinario         decimal(13,2) not null,
+    Bonificaciones    decimal(13,2) not null,
+    Descuentos        decimal(13,2) not null,
+    Impuestos         decimal(13,2) not null,
+    Extras            decimal(13,2) not null,
+    Total             decimal(13,2),
+    CONSTRAINT PK37 PRIMARY KEY (correlativo)
 )
 go
 
@@ -551,14 +325,14 @@ go
  */
 
 CREATE TABLE Direcciones(
-    idColaborador      numeric(15, 0)    NOT NULL,
-    idTipoDireccion    numeric(3, 0)     NOT NULL,
-    idDireccion        numeric(3, 0)     NOT NULL,
-    descripcion        varchar(40)       NULL,
-    idPais             varchar(3)        NULL,
-    idDepartamento     numeric(3, 0)     NULL,
-    idMunicipio        numeric(3, 0)     NULL,
-    CONSTRAINT PK10 PRIMARY KEY NONCLUSTERED (idColaborador, idTipoDireccion, idDireccion)
+    idColaborador      int    NOT NULL,
+    idTipoDireccion   int     NOT NULL,
+    idDireccion       int     NOT NULL identity(1,1),
+    descripcion        VARCHAR(40) not null,
+    idPais             VARCHAR(3) not null,
+    idDepartamento    int not null,
+    idMunicipio       int not null,
+ CONSTRAINT PK10 PRIMARY KEY (idDireccion)
 )
 go
 
@@ -575,10 +349,10 @@ go
  */
 
 CREATE TABLE Empresa(
-    idEmpresa      numeric(5, 0)    NOT NULL,
-    descripcion    varchar(40)      NULL,
-    NIT            varchar(18)      NULL,
-    CONSTRAINT PK5 PRIMARY KEY NONCLUSTERED (idEmpresa)
+    idEmpresa      int    NOT NULL identity(1,1),
+    descripcion    VARCHAR(40) not null,
+    NIT            VARCHAR(18) not null,
+    CONSTRAINT PK5 PRIMARY KEY (idEmpresa)
 )
 go
 
@@ -595,10 +369,10 @@ go
  */
 
 CREATE TABLE EmpresaColaborador(
-    idEmpresa        numeric(5, 0)     NOT NULL,
-    idColaborador    numeric(15, 0)    NOT NULL,
-    Activo           varchar(1)        NULL,
-    CONSTRAINT PK9 PRIMARY KEY NONCLUSTERED (idEmpresa, idColaborador)
+    idEmpresa       int     NOT NULL,
+    idColaborador    int    NOT NULL,
+    Activo           VARCHAR(1),
+   -- CONSTRAINT PK9 PRIMARY KEY (idEmpresa, idColaborador)
 )
 go
 
@@ -615,9 +389,9 @@ go
  */
 
 CREATE TABLE EstadoCivil(
-    idEstadoCivil    numeric(3, 0)    NOT NULL,
-    descripcion      varchar(40)      NULL,
-    CONSTRAINT PK27 PRIMARY KEY NONCLUSTERED (idEstadoCivil)
+    idEstadoCivil    int identity(1,1)    NOT NULL,
+    descripcion      VARCHAR(40) not null,
+    CONSTRAINT PK27 PRIMARY KEY (idEstadoCivil)
 )
 go
 
@@ -634,9 +408,9 @@ go
  */
 
 CREATE TABLE formaPago(
-    idFormaPago    numeric(3, 0)    NOT NULL,
-    descripcion    varchar(40)      NULL,
-    CONSTRAINT PK31 PRIMARY KEY NONCLUSTERED (idFormaPago)
+    idFormaPago    int     NOT NULL identity(1,1),
+    descripcion    VARCHAR(40) not null,
+    CONSTRAINT PK31 PRIMARY KEY (idFormaPago)
 )
 go
 
@@ -653,11 +427,11 @@ go
  */
 
 CREATE TABLE Identificacion(
-    idColaborador       numeric(15, 0)    NOT NULL,
-    idIdentificacion    numeric(3, 0)     NOT NULL,
-    idTipoDocumento     numeric(3, 0)     NOT NULL,
-    noDocumento         varchar(18)       NULL,
-    CONSTRAINT PK44 PRIMARY KEY NONCLUSTERED (idColaborador, idIdentificacion)
+    idColaborador       int    NOT NULL,
+    idIdentificacion   int  identity(1,1)   NOT NULL,
+    idTipoDocumento    int     NOT NULL,
+    noDocumento         VARCHAR(18) not null,
+    CONSTRAINT PK44 PRIMARY KEY ( idIdentificacion)
 )
 go
 
@@ -674,10 +448,10 @@ go
  */
 
 CREATE TABLE Impuesto(
-    idImpuesto     numeric(3, 0)    NOT NULL,
-    descripcion    varchar(40)      NULL,
-    porcentaje     numeric(5, 3)    NULL,
-    CONSTRAINT PK28 PRIMARY KEY NONCLUSTERED (idImpuesto)
+    idImpuesto     int  identity(1,1)  NOT NULL,
+    descripcion    VARCHAR(125) not null,
+    porcentaje     decimal(5,2) not null,
+    CONSTRAINT PK28 PRIMARY KEY (idImpuesto)
 )
 go
 
@@ -694,11 +468,11 @@ go
  */
 
 CREATE TABLE Municipio(
-    idPais            varchar(3)       NOT NULL,
-    idDepartamento    numeric(3, 0)    NOT NULL,
-    idMunicipio       numeric(3, 0)    NOT NULL,
-    descripcion       varchar(40)      NULL,
-    CONSTRAINT PK13 PRIMARY KEY NONCLUSTERED (idPais, idDepartamento, idMunicipio)
+    idPais            VARCHAR(3)     NOT NULL,
+    idDepartamento    int    NOT NULL,
+    idMunicipio       int    NOT NULL identity(1,1),
+    descripcion       VARCHAR(40) not null,
+    CONSTRAINT PK13 PRIMARY KEY (idMunicipio)
 )
 go
 
@@ -715,9 +489,9 @@ go
  */
 
 CREATE TABLE NivelAcademico(
-    idNivelAcademico    numeric(3, 0)    NOT NULL,
-    descripcion         varchar(40)      NULL,
-    CONSTRAINT PK21 PRIMARY KEY NONCLUSTERED (idNivelAcademico)
+    idNivelAcademico    int    NOT NULL identity(1,1),
+    descripcion         VARCHAR(70) not null,
+    CONSTRAINT PK21 PRIMARY KEY (idNivelAcademico)
 )
 go
 
@@ -734,10 +508,10 @@ go
  */
 
 CREATE TABLE Pais(
-    idPais         varchar(3)     NOT NULL,
-    descripcion    varchar(40)    NULL,
-    extension      char(10)       NULL,
-    CONSTRAINT PK11 PRIMARY KEY NONCLUSTERED (idPais)
+    idPais         VARCHAR(3)     NOT NULL,
+    descripcion    VARCHAR(40) not null,
+    extension      CHAR(10),
+    CONSTRAINT PK11 PRIMARY KEY (idPais)
 )
 go
 
@@ -754,9 +528,9 @@ go
  */
 
 CREATE TABLE Parentezco(
-    idParentezco    numeric(3, 0)    NOT NULL,
-    descripcion     varchar(40)      NULL,
-    CONSTRAINT PK18 PRIMARY KEY NONCLUSTERED (idParentezco)
+    idParentezco    int    NOT NULL identity(1,1),
+    descripcion     VARCHAR(75) not null,
+    CONSTRAINT PK18 PRIMARY KEY (idParentezco)
 )
 go
 
@@ -811,10 +585,10 @@ go
  */
 
 CREATE TABLE Planilla(
-    idPlanilla    numeric(15, 0)    NOT NULL,
-    año           numeric(4, 0)     NOT NULL,
-    mes           numeric(2, 0)     NOT NULL,
-    CONSTRAINT PK36 PRIMARY KEY NONCLUSTERED (idPlanilla, año, mes)
+    idPlanilla    int    NOT NULL identity(1,1),
+    anio           int     NOT NULL,
+    mes           int     NOT NULL,
+    CONSTRAINT PK36 PRIMARY KEY (idPlanilla)
 )
 go
 
@@ -831,9 +605,9 @@ go
  */
 
 CREATE TABLE Profesion(
-    idProfesion    numeric(3, 0)    NOT NULL,
-    descripcion    varchar(40)      NULL,
-    CONSTRAINT PK19 PRIMARY KEY NONCLUSTERED (idProfesion)
+    idProfesion    int    NOT NULL identity(1,1),
+    descripcion    VARCHAR(125) not null,
+    CONSTRAINT PK19 PRIMARY KEY (idProfesion)
 )
 go
 
@@ -850,11 +624,11 @@ go
  */
 
 CREATE TABLE Puesto(
-    idPuesto           numeric(3, 0)     NOT NULL,
-    descripcion        varchar(40)       NULL,
-    sueldoOrdinario    numeric(13, 2)    NULL,
-    idArea             numeric(3, 0)     NOT NULL,
-    CONSTRAINT PK3 PRIMARY KEY NONCLUSTERED (idPuesto)
+    idPuesto           int    NOT NULL identity(1,1),
+    descripcion        VARCHAR(125) not null,
+    sueldoOrdinario    decimal(13,2) not null,
+    idArea             int     NOT NULL,
+    CONSTRAINT PK3 PRIMARY KEY (idPuesto)
 )
 go
 
@@ -871,9 +645,9 @@ go
  */
 
 CREATE TABLE PuestoImpuesto(
-    idImpuesto    numeric(3, 0)    NOT NULL,
-    idPuesto      numeric(3, 0)    NOT NULL,
-    CONSTRAINT PK35 PRIMARY KEY NONCLUSTERED (idImpuesto, idPuesto)
+    idImpuesto    int    NOT NULL,
+    idPuesto      int    NOT NULL,
+    -- CONSTRAINT PK35 PRIMARY KEY (idImpuesto, idPuesto)
 )
 go
 
@@ -890,16 +664,16 @@ go
  */
 
 CREATE TABLE ReferenciaColaborador(
-    idColaborador       numeric(15, 0)    NOT NULL,
-    idReferencia        char(10)          NOT NULL,
-    nombre              char(10)          NULL,
-    telefono1           char(10)          NULL,
-    direccion           char(10)          NULL,
-    edad                char(10)          NULL,
-    idTipoReferencia    numeric(3, 0)     NOT NULL,
-    idParentezco        numeric(3, 0)     NOT NULL,
-    idProfesion         numeric(3, 0)     NOT NULL,
-    CONSTRAINT PK16 PRIMARY KEY NONCLUSTERED (idColaborador, idReferencia)
+    idColaborador       int    NOT NULL ,
+    idReferencia        int        NOT NULL identity(1,1),
+    nombre              varCHAR(120) not null,
+    telefono1           varCHAR(10) not null,
+    direccion           varCHAR(120),
+    edad                int not null,
+    idTipoReferencia    int     NOT NULL,
+    idParentezco        int     NOT NULL,
+    idProfesion         int     NOT NULL,
+    CONSTRAINT PK16 PRIMARY KEY (idReferencia)
 )
 go
 
@@ -935,9 +709,9 @@ go
  */
 
 CREATE TABLE Servicio(
-    idServicio     numeric(3, 0)    NOT NULL,
-    descripcion    varchar(40)      NULL,
-    CONSTRAINT PK6 PRIMARY KEY NONCLUSTERED (idServicio)
+    idServicio     int    NOT NULL identity(1,1),
+    descripcion    VARCHAR(125) not null,
+    CONSTRAINT PK6 PRIMARY KEY (idServicio)
 )
 go
 
@@ -954,9 +728,9 @@ go
  */
 
 CREATE TABLE ServicioEmpresa(
-    idServicio    numeric(3, 0)    NOT NULL,
-    idEmpresa     numeric(5, 0)    NOT NULL,
-    CONSTRAINT PK15 PRIMARY KEY NONCLUSTERED (idServicio, idEmpresa)
+    idServicio    int    NOT NULL,
+    idEmpresa     int    NOT NULL,
+    -- CONSTRAINT PK15 PRIMARY KEY (idServicio, idEmpresa)
 )
 go
 
@@ -973,9 +747,9 @@ go
  */
 
 CREATE TABLE TipoCuenta(
-    idTipoCuenta    numeric(2, 0)    NOT NULL,
-    descripcion     varchar(40)      NULL,
-    CONSTRAINT PK23 PRIMARY KEY NONCLUSTERED (idTipoCuenta)
+    idTipoCuenta    int    NOT NULL identity(1,1),
+    descripcion     VARCHAR(120) not null,
+    CONSTRAINT PK23 PRIMARY KEY (idTipoCuenta)
 )
 go
 
@@ -992,9 +766,9 @@ go
  */
 
 CREATE TABLE TipoDescuento(
-    idTipoDescuento    numeric(3, 0)    NOT NULL,
-    descripcion        varchar(40)      NULL,
-    CONSTRAINT PK39 PRIMARY KEY NONCLUSTERED (idTipoDescuento)
+    idTipoDescuento    int    NOT NULL identity(1,1),
+    descripcion        VARCHAR(120) not null,
+    CONSTRAINT PK39 PRIMARY KEY (idTipoDescuento)
 )
 go
 
@@ -1011,9 +785,9 @@ go
  */
 
 CREATE TABLE TipoDireccion(
-    idTipoDireccion    numeric(3, 0)    NOT NULL,
-    descripcion        varchar(40)      NULL,
-    CONSTRAINT PK8 PRIMARY KEY NONCLUSTERED (idTipoDireccion)
+    idTipoDireccion    int    NOT NULL identity(1,1),
+    descripcion        VARCHAR(120) not null,
+    CONSTRAINT PK8 PRIMARY KEY (idTipoDireccion)
 )
 go
 
@@ -1030,10 +804,10 @@ go
  */
 
 CREATE TABLE TipoDocumento(
-    idTipoDocumento    numeric(3, 0)    NOT NULL,
-    tipoDocumento      numeric(3, 0)    NULL,
-    mascara            varchar(18)      NULL,
-    CONSTRAINT PK43 PRIMARY KEY NONCLUSTERED (idTipoDocumento)
+    idTipoDocumento    int    NOT NULL identity(1,1),
+    tipoDocumento      int not null,
+    mascara            VARCHAR(18) not null,
+    CONSTRAINT PK43 PRIMARY KEY (idTipoDocumento)
 )
 go
 
@@ -1050,9 +824,9 @@ go
  */
 
 CREATE TABLE TipoReferencia(
-    idTipoReferencia    numeric(3, 0)    NOT NULL,
-    descripcion         varchar(40)      NULL,
-    CONSTRAINT PK17 PRIMARY KEY NONCLUSTERED (idTipoReferencia)
+    idTipoReferencia    int    NOT NULL identity(1,1),
+    descripcion         VARCHAR(120) not null,
+    CONSTRAINT PK17 PRIMARY KEY (idTipoReferencia)
 )
 go
 
@@ -1219,14 +993,15 @@ ALTER TABLE DatosAcademicos ADD CONSTRAINT RefPais28
 go
 
 ALTER TABLE DatosAcademicos ADD CONSTRAINT RefDepartamento29 
-    FOREIGN KEY (idPais, idDepartamento)
-    REFERENCES Departamento(idPais, idDepartamento)
-go
+    FOREIGN KEY ( idDepartamento)
+    REFERENCES Departamento(idDepartamento)
+;
 
 ALTER TABLE DatosAcademicos ADD CONSTRAINT RefMunicipio30 
-    FOREIGN KEY (idPais, idDepartamento, idMunicipio)
-    REFERENCES Municipio(idPais, idDepartamento, idMunicipio)
-go
+    FOREIGN KEY (idMunicipio)
+    REFERENCES Municipio(idMunicipio)
+;
+
 
 
 /* 
@@ -1254,9 +1029,12 @@ go
  */
 
 ALTER TABLE DetallePlanilla ADD CONSTRAINT RefPlanilla52 
-    FOREIGN KEY (idPlanilla, año, mes)
-    REFERENCES Planilla(idPlanilla, año, mes)
+
+    FOREIGN KEY (idPlanilla)
+    REFERENCES Planilla(idPlanilla)
+;
 go
+
 
 ALTER TABLE DetallePlanilla ADD CONSTRAINT RefColaborador53 
     FOREIGN KEY (idColaborador)
@@ -1279,14 +1057,18 @@ ALTER TABLE Direcciones ADD CONSTRAINT RefPais18
 go
 
 ALTER TABLE Direcciones ADD CONSTRAINT RefDepartamento19 
-    FOREIGN KEY (idPais, idDepartamento)
-    REFERENCES Departamento(idPais, idDepartamento)
-go
+
+    FOREIGN KEY (idDepartamento)
+    REFERENCES Departamento(idDepartamento)
+;
 
 ALTER TABLE Direcciones ADD CONSTRAINT RefMunicipio20 
-    FOREIGN KEY (idPais, idDepartamento, idMunicipio)
-    REFERENCES Municipio(idPais, idDepartamento, idMunicipio)
+    FOREIGN KEY (idMunicipio)
+    REFERENCES Municipio(idMunicipio)
+;
 go
+
+
 
 ALTER TABLE Direcciones ADD CONSTRAINT RefTipoDireccion5 
     FOREIGN KEY (idTipoDireccion)
@@ -1297,6 +1079,7 @@ ALTER TABLE Direcciones ADD CONSTRAINT RefColaborador6
     FOREIGN KEY (idColaborador)
     REFERENCES Colaborador(idColaborador)
 go
+
 
 
 /* 
@@ -1334,8 +1117,9 @@ go
  */
 
 ALTER TABLE Municipio ADD CONSTRAINT RefDepartamento9 
-    FOREIGN KEY (idPais, idDepartamento)
-    REFERENCES Departamento(idPais, idDepartamento)
+    FOREIGN KEY (idDepartamento)
+    REFERENCES Departamento(idDepartamento)
+;
 go
 
 

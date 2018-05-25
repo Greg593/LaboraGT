@@ -14,18 +14,18 @@ namespace LaboraGTv0._1.Models
     
     public partial class DatosAcademicos
     {
-        public decimal idColaborador { get; set; }
-        public decimal idAdemicoColaborador { get; set; }
-        public decimal idNivelAcademico { get; set; }
+        public int idColaborador { get; set; }
+        public int idAcademicoColaborador { get; set; }
+        public int idNivelAcademico { get; set; }
         public string nombreInstitucion { get; set; }
-        public Nullable<System.DateTime> fechaInicio { get; set; }
-        public Nullable<System.DateTime> fechaFinalizo { get; set; }
+        public System.DateTime fechaInicio { get; set; }
+        public System.DateTime fechaFinalizo { get; set; }
         public string telefono { get; set; }
         public string direccion { get; set; }
         public string observacion { get; set; }
         public string idPais { get; set; }
-        public Nullable<decimal> idDepartamento { get; set; }
-        public Nullable<decimal> idMunicipio { get; set; }
+        public Nullable<int> idDepartamento { get; set; }
+        public Nullable<int> idMunicipio { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }
         public virtual Departamento Departamento { get; set; }

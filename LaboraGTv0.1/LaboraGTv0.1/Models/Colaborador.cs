@@ -22,6 +22,7 @@ namespace LaboraGTv0._1.Models
             this.DatoFamiliar = new HashSet<DatoFamiliar>();
             this.DatosAcademicos = new HashSet<DatosAcademicos>();
             this.DatosLaborales = new HashSet<DatosLaborales>();
+            this.CuentaDeposito = new HashSet<CuentaDeposito>();
             this.DetallePlanilla = new HashSet<DetallePlanilla>();
             this.ColaboradorDescuento = new HashSet<ColaboradorDescuento>();
             this.Identificacion = new HashSet<Identificacion>();
@@ -29,19 +30,19 @@ namespace LaboraGTv0._1.Models
             this.Bonos = new HashSet<Bonos>();
         }
     
-        public decimal idColaborador { get; set; }
+        public int idColaborador { get; set; }
         public string nombre1 { get; set; }
         public string nombre2 { get; set; }
         public string nombre3 { get; set; }
         public string apellido1 { get; set; }
         public string apellido2 { get; set; }
         public string apellido3 { get; set; }
-        public Nullable<System.DateTime> fechaNacimiento { get; set; }
+        public System.DateTime fechaNacimiento { get; set; }
         public string sexo { get; set; }
-        public decimal idEstadoCivil { get; set; }
-        public decimal idProfesion { get; set; }
-        public decimal idPuesto { get; set; }
-        public string username { get; set; }
+        public int idEstadoCivil { get; set; }
+        public int idProfesion { get; set; }
+        public int idPuesto { get; set; }
+        public string usuario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReferenciaColaborador> ReferenciaColaborador { get; set; }
@@ -53,7 +54,8 @@ namespace LaboraGTv0._1.Models
         public virtual ICollection<DatosAcademicos> DatosAcademicos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DatosLaborales> DatosLaborales { get; set; }
-        public virtual CuentaDeposito CuentaDeposito { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CuentaDeposito> CuentaDeposito { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallePlanilla> DetallePlanilla { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -62,10 +64,10 @@ namespace LaboraGTv0._1.Models
         public virtual ICollection<Identificacion> Identificacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Direcciones> Direcciones { get; set; }
+        public virtual Credencial Credencial { get; set; }
         public virtual EstadoCivil EstadoCivil { get; set; }
         public virtual Profesion Profesion { get; set; }
         public virtual Puesto Puesto { get; set; }
-        public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bonos> Bonos { get; set; }
     }

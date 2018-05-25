@@ -1,0 +1,27 @@
+﻿@model LaboraGTv0._1.Models.formaPago
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>formaPago</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idFormaPago }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

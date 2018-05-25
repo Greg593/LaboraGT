@@ -14,13 +14,13 @@ namespace LaboraGTv0._1.Models
     
     public partial class Direcciones
     {
-        public decimal idColaborador { get; set; }
-        public decimal idTipoDireccion { get; set; }
-        public decimal idDireccion { get; set; }
+        public int idColaborador { get; set; }
+        public int idTipoDireccion { get; set; }
+        public int idDireccion { get; set; }
         public string descripcion { get; set; }
         public string idPais { get; set; }
-        public Nullable<decimal> idDepartamento { get; set; }
-        public Nullable<decimal> idMunicipio { get; set; }
+        public int idDepartamento { get; set; }
+        public int idMunicipio { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }
         public virtual Departamento Departamento { get; set; }

@@ -1,0 +1,115 @@
+﻿@model LaboraGTv0._1.Models.Colaborador
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Colaborador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credencial.passw)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credencial.passw)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoCivil.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoCivil.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profesion.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profesion.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puesto.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puesto.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idColaborador }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

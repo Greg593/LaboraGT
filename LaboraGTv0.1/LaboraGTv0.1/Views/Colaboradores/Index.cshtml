@@ -1,0 +1,100 @@
+﻿@model IEnumerable<LaboraGTv0._1.Models.Colaborador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Credencial.passw)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoCivil.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profesion.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puesto.descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Credencial.passw)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoCivil.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profesion.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puesto.descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idColaborador }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idColaborador }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idColaborador })
+        </td>
+    </tr>
+}
+
+</table>

@@ -14,15 +14,15 @@ namespace LaboraGTv0._1.Models
     
     public partial class DatosLaborales
     {
-        public decimal idColaborador { get; set; }
-        public decimal idLaboral { get; set; }
+        public int idColaborador { get; set; }
+        public int idLaboral { get; set; }
         public string Empresa { get; set; }
         public string CargoInicial { get; set; }
         public string CargoFinal { get; set; }
         public string Telefono { get; set; }
         public string JefeInmediato { get; set; }
-        public Nullable<System.DateTime> FechaInicio { get; set; }
-        public Nullable<System.DateTime> FechaFinal { get; set; }
+        public System.DateTime FechaInicio { get; set; }
+        public System.DateTime FechaFinal { get; set; }
         public string MotivoRetiro { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }

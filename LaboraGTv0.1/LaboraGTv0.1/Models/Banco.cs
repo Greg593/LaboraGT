@@ -21,7 +21,7 @@ namespace LaboraGTv0._1.Models
             this.CuentaDeposito = new HashSet<CuentaDeposito>();
         }
     
-        public decimal idBanco { get; set; }
+        public int idBanco { get; set; }
         public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

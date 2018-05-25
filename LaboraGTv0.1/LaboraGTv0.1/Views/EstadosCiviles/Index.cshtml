@@ -1,0 +1,74 @@
+﻿@model IEnumerable<LaboraGTv0._1.Models.EstadoCivil>
+
+@{
+    ViewBag.Title = "Estados Civiles";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+
+
+
+<div class="ui segment vertical">
+    <div class="ui container">
+        <div class="ui header block">
+            <div class="ui breadcrumb">
+                <a href="/" class="section"><i class="icon home "></i></a>
+                <i class="right angle icon divider"></i>
+                <div class="section active">Estados Civiles</div>
+            </div>
+        </div>
+        <h1 class="ui header">Estados Civiles</h1>
+        <div class="ui divider"></div>
+
+        @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "ui button primary" })
+        <table class="ui ustackable celled table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.ToList().Count > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.idEstadoCivil)</td>
+                            <td>@Html.DisplayFor(modelItem => item.descripcion)</td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.idEstadoCivil }, new { @class = "ui button mini primary" })
+                                @Html.ActionLink("Ver", "Details", new { id = item.idEstadoCivil }, new { @class = "ui button mini primary" })
+                                @Html.ActionLink("Borrar", "Delete", new { id = item.idEstadoCivil }, new { @class = "ui button mini yellow" })
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td>No hay ningun registro para mostrar...</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">
+
+                        <div class="ui pagination menu">
+                            <a class='item' href=''>1</a>
+                        </div>
+                    </th>
+                    <th>
+                        Registros(@Model.ToList().Count )
+
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+
+

@@ -21,10 +21,10 @@ namespace LaboraGTv0._1.Models
             this.Impuesto = new HashSet<Impuesto>();
         }
     
-        public decimal idPuesto { get; set; }
+        public int idPuesto { get; set; }
         public string descripcion { get; set; }
-        public Nullable<decimal> sueldoOrdinario { get; set; }
-        public decimal idArea { get; set; }
+        public decimal sueldoOrdinario { get; set; }
+        public int idArea { get; set; }
     
         public virtual Area Area { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

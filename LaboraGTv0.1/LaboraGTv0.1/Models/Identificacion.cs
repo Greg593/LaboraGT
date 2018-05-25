@@ -14,9 +14,9 @@ namespace LaboraGTv0._1.Models
     
     public partial class Identificacion
     {
-        public decimal idColaborador { get; set; }
-        public decimal idIdentificacion { get; set; }
-        public decimal idTipoDocumento { get; set; }
+        public int idColaborador { get; set; }
+        public int idIdentificacion { get; set; }
+        public int idTipoDocumento { get; set; }
         public string noDocumento { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }

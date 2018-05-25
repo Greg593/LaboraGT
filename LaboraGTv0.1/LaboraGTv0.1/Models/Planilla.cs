@@ -20,9 +20,9 @@ namespace LaboraGTv0._1.Models
             this.DetallePlanilla = new HashSet<DetallePlanilla>();
         }
     
-        public decimal idPlanilla { get; set; }
-        public decimal año { get; set; }
-        public decimal mes { get; set; }
+        public int idPlanilla { get; set; }
+        public int anio { get; set; }
+        public int mes { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallePlanilla> DetallePlanilla { get; set; }

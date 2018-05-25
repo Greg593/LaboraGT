@@ -3,9 +3,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title | LaboraGT</title>
     
     @Styles.Render("~/Content/semantic")
+    @Styles.Render("~/Content/calendar")
 
 </head>
 <body>
@@ -25,28 +26,28 @@
             Parametrización
             <i class="whmcs icon"></i>
             <div class="menu">
-                <a class="item">Paises</a>
-                <a class="item">Parentezcos</a>
-                <a class="item">Profesiones</a>
-                <a class="item">Formas de Pago</a>
-                <a class="item">Estados Civiles</a>
-                <a class="item">Niveles Academicos</a>
-                <a class="item">Tipos de Referencia</a>
-                <a class="item">Tipos de Documento</a>
-                <a class="item">Tipos de Dirección</a>
-                <a class="item">Tipos de Servicios</a>
-                <a class="item">Tipos de Bonos</a>
-                <a class="item">Tipos de Descuentos</a>
+                <a class="item" href="/Pais">Paises</a>
+                <a class="item" href="/Parentezcos">Parentezcos</a>
+                <a class="item" href="/Profesiones">Profesiones</a>
+                <a class="item" href="/FormaPagos">Formas de Pago</a>
+                <a class="item" href="/EstadosCiviles">Estados Civiles</a>
+                <a class="item" href="/NivelesAcademicos">Niveles Academicos</a>
+                <a class="item" href="/TiposReferencias">Tipos de Referencia</a>
+                <a class="item" href="/TiposDocumentos">Tipos de Documento</a>
+                <a class="item" href="/TipoDirecciones">Tipos de Dirección</a>
+                <a class="item" href="/Servicios">Tipos de Servicios</a>
+                <a class="item" href="/Bonos" >Tipos de Bonos</a>
+                <a class="item" href="/TipoDescuentos">Tipos de Descuentos</a>
             </div>
         </div>
         <div class="item">
             Administración
             <i class="cogs icon"></i>
             <div class="menu">
-                <a class="item">Empresas</a>
-                <a class="item">Bancos</a>
-                <a class="item">Areas</a>
-                <a class="item">Puestos</a>
+                <a class="item" href="/Empresas">Empresas</a>
+                <a class="item" href="/Bancos">Bancos</a>
+                <a class="item" href="/Areas">Areas</a>
+                <a class="item" href="/Puestos">Puestos</a>
                 <a class="item">Colaboradores</a>
                 <a class="item">Indicadores</a>
             </div>
@@ -91,6 +92,7 @@
     
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/semantic")
+    @Scripts.Render("~/bundles/calendar")
     <script>
         $(document).ready(function () {
             $(".btn.my-menu").click(function () {
@@ -99,7 +101,21 @@
                   .sidebar('toggle');
             });
             //habilitacion de dropdown
-             $('.ui.dropdown').dropdown();
+            $('.ui.dropdown').dropdown();
+
+            $('#calendar').calendar({
+                type: 'date',
+                monthFirst: false,
+                formatter: {
+                    date: function (date, settings) {
+                        if (!date) return '';
+                        var day = date.getDate();
+                        var month = date.getMonth() + 1;
+                        var year = date.getFullYear();
+                        return day + '-' + month + '-' + year;
+                    }
+                }
+            });
         });
     </script>
 </body>

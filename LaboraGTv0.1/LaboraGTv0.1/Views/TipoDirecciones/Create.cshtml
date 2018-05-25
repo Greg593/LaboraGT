@@ -1,0 +1,42 @@
+﻿@model LaboraGTv0._1.Models.TipoDireccion
+
+@{
+    ViewBag.Title = "Tipo de Direcciones";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="ui segment vertical">
+    <div class="ui container">
+        <div class="ui header block">
+            <div class="ui breadcrumb">
+                <a href="/" class="section"><i class="icon home "></i></a>
+                <i class="right angle icon divider"></i>
+                <a href="/TipoDirecciones" class="section">Tipo de direcciones</i></a>
+                <i class="right angle icon divider"></i>
+                <div class="section active">Agregar Tipo de Direccion</div>
+            </div>
+        </div>
+        <h1 class="ui header">Tipos de Direcciones</h1>
+        <div class="ui divider"></div>
+        <form method="post" class="ui form container text segment">
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "ui error message" })
+
+            <div class="field required">
+                <label>Descripción</label>
+                @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @required = "" } })
+                @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "ui error message" })
+
+            </div>
+            <div class="ui divider hidden"></div>
+            <button type="submit" class="ui button fluid teal">
+                <i class="icon save"></i>
+                Completar
+            </button>
+        </form>
+
+    </div>
+</div>

@@ -20,8 +20,8 @@ namespace LaboraGTv0._1.Models
             this.Identificacion = new HashSet<Identificacion>();
         }
     
-        public decimal idTipoDocumento { get; set; }
-        public Nullable<decimal> tipoDocumento1 { get; set; }
+        public int idTipoDocumento { get; set; }
+        public int tipoDocumento1 { get; set; }
         public string mascara { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
