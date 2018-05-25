@@ -1,3 +1,4 @@
+-- Definición de Tablas (solo para visualización)
 create table datos (
 	
 	-- 
@@ -561,4 +562,104 @@ insert into NivelAcademico values (3,'Diversificado');
 insert into NivelAcademico values (4,'Universidad');
 insert into NivelAcademico values (5,'Otros'); 
 
-insert into 
+
+-- Secuencias para Tablas
+create sequence area_seq
+	start with 1
+	increment by 1
+	nomaxvalue;
+
+create sequence banco_seq
+	start with 1
+	increment by 1
+	nomaxvalue;	
+
+create sequence bono_seq
+	start with 1
+	increment by 1
+	nomaxvalue;	
+
+create sequence colaborador_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence empresa_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence estadoCivil_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence formaPago_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence impuesto_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence nivelAcademico_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence parentezco_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence planilla_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence profesion_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence puesto_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence servicio_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence tipoCuenta_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence tipoDescuento_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence tipoDireccion_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence tipoDocumento_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence tipoReferencia_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
+
+create sequence banco_seq
+	start with 1
+	increment by 1
+	nomaxvalue;		
