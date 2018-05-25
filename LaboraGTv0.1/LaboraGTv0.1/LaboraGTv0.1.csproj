@@ -149,6 +149,7 @@
     <Content Include="Content\img\logo-laboragt.jpg" />
     <Content Include="Content\img\logo.jpeg" />
     <Content Include="Content\img\logo.jpg" />
+    <Content Include="Content\SemanticUI\calendar.css" />
     <Content Include="Content\SemanticUI\components\accordion.css" />
     <Content Include="Content\SemanticUI\components\accordion.js" />
     <Content Include="Content\SemanticUI\components\accordion.min.css" />
@@ -293,18 +294,19 @@
     <Content Include="Content\SemanticUI\themes\default\assets\fonts\icons.svg" />
     <Content Include="Content\SemanticUI\themes\default\assets\images\flags.png" />
     <Content Include="Global.asax" />
-    <Content Include="Models\LaboraGT_Model.Context.tt">
+    <Content Include="Models\LABORAGT_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LaboraGT_Model.edmx</DependentUpon>
-      <LastGenOutput>LaboraGT_Model.Context.cs</LastGenOutput>
+      <DependentUpon>LABORAGT_Model.edmx</DependentUpon>
+      <LastGenOutput>LABORAGT_Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\LaboraGT_Model.tt">
+    <Content Include="Models\LABORAGT_Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LaboraGT_Model.edmx</DependentUpon>
-      <LastGenOutput>LaboraGT_Model.cs</LastGenOutput>
+      <DependentUpon>LABORAGT_Model.edmx</DependentUpon>
+      <LastGenOutput>LABORAGT_Model.cs</LastGenOutput>
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\calendar.js" />
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\semantic.js" />
     <Content Include="scripts\sweetalert.js" />
@@ -316,134 +318,144 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AreasController.cs" />
+    <Compile Include="Controllers\BancosController.cs" />
+    <Compile Include="Controllers\BonosController.cs" />
+    <Compile Include="Controllers\ColaboradoresController.cs" />
+    <Compile Include="Controllers\EmpresasController.cs" />
+    <Compile Include="Controllers\EstadosCivilesController.cs" />
+    <Compile Include="Controllers\FormaPagosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NivelesAcademicosController.cs" />
     <Compile Include="Controllers\PaisController.cs" />
+    <Compile Include="Controllers\ParentezcosController.cs" />
+    <Compile Include="Controllers\ProfesionesController.cs" />
+    <Compile Include="Controllers\PuestosController.cs" />
+    <Compile Include="Controllers\ServiciosController.cs" />
+    <Compile Include="Controllers\TipoDescuentosController.cs" />
+    <Compile Include="Controllers\TipoDireccionesController.cs" />
+    <Compile Include="Controllers\TiposDocumentosController.cs" />
+    <Compile Include="Controllers\TiposReferenciasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Area.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Banco.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Bonos.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Colaborador.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ColaboradorDescuento.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Credencial.cs">
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CuentaDeposito.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CuentaEmpresa.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DatoFamiliar.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DatosAcademicos.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DatosLaborales.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Departamento.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DetallePlanilla.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Direcciones.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Empresa.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EmpresaColaborador.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EstadoCivil.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\formaPago.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Identificacion.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Impuesto.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LaboraGT_Model.Context.cs">
+    <Compile Include="Models\LABORAGT_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LaboraGT_Model.Context.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LaboraGT_Model.cs">
+    <Compile Include="Models\LABORAGT_Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LaboraGT_Model.Designer.cs">
+    <Compile Include="Models\LABORAGT_Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LaboraGT_Model.edmx</DependentUpon>
+      <DependentUpon>LABORAGT_Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Municipio.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NivelAcademico.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Pais.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Parentezco.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Permiso.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Planilla.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Profesion.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Puesto.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ReferenciaColaborador.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Rol.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Servicio.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoCuenta.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoDescuento.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoDireccion.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoDocumento.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TipoReferencia.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Usuario.cs">
-      <DependentUpon>LaboraGT_Model.tt</DependentUpon>
+      <DependentUpon>LABORAGT_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -462,18 +474,98 @@
     <Content Include="Content\SemanticUI\themes\default\assets\fonts\icons.ttf" />
     <Content Include="Content\SemanticUI\themes\default\assets\fonts\icons.woff" />
     <Content Include="Content\SemanticUI\themes\default\assets\fonts\icons.woff2" />
-    <EntityDeploy Include="Models\LaboraGT_Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LaboraGT_Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\LaboraGT_Model.edmx.diagram">
-      <DependentUpon>LaboraGT_Model.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\Pais\Create.cshtml" />
     <Content Include="Views\Pais\Delete.cshtml" />
     <Content Include="Views\Pais\Details.cshtml" />
     <Content Include="Views\Pais\Edit.cshtml" />
     <Content Include="Views\Pais\Index.cshtml" />
+    <Content Include="Views\Parentezcos\Create.cshtml" />
+    <Content Include="Views\Parentezcos\Delete.cshtml" />
+    <Content Include="Views\Parentezcos\Details.cshtml" />
+    <Content Include="Views\Parentezcos\Edit.cshtml" />
+    <Content Include="Views\Parentezcos\Index.cshtml" />
+    <Content Include="Views\Profesiones\Create.cshtml" />
+    <Content Include="Views\Profesiones\Delete.cshtml" />
+    <Content Include="Views\Profesiones\Details.cshtml" />
+    <Content Include="Views\Profesiones\Edit.cshtml" />
+    <Content Include="Views\Profesiones\Index.cshtml" />
+    <Content Include="Views\FormaPagos\Create.cshtml" />
+    <Content Include="Views\FormaPagos\Delete.cshtml" />
+    <Content Include="Views\FormaPagos\Details.cshtml" />
+    <Content Include="Views\FormaPagos\Edit.cshtml" />
+    <Content Include="Views\FormaPagos\Index.cshtml" />
+    <Content Include="Views\EstadosCiviles\Create.cshtml" />
+    <Content Include="Views\EstadosCiviles\Delete.cshtml" />
+    <Content Include="Views\EstadosCiviles\Details.cshtml" />
+    <Content Include="Views\EstadosCiviles\Edit.cshtml" />
+    <Content Include="Views\EstadosCiviles\Index.cshtml" />
+    <Content Include="Views\NivelesAcademicos\Create.cshtml" />
+    <Content Include="Views\NivelesAcademicos\Delete.cshtml" />
+    <Content Include="Views\NivelesAcademicos\Details.cshtml" />
+    <Content Include="Views\NivelesAcademicos\Edit.cshtml" />
+    <Content Include="Views\NivelesAcademicos\Index.cshtml" />
+    <Content Include="Views\TiposReferencias\Create.cshtml" />
+    <Content Include="Views\TiposReferencias\Delete.cshtml" />
+    <Content Include="Views\TiposReferencias\Details.cshtml" />
+    <Content Include="Views\TiposReferencias\Edit.cshtml" />
+    <Content Include="Views\TiposReferencias\Index.cshtml" />
+    <Content Include="Views\TiposDocumentos\Create.cshtml" />
+    <Content Include="Views\TiposDocumentos\Delete.cshtml" />
+    <Content Include="Views\TiposDocumentos\Details.cshtml" />
+    <Content Include="Views\TiposDocumentos\Edit.cshtml" />
+    <Content Include="Views\TiposDocumentos\Index.cshtml" />
+    <Content Include="Views\TipoDirecciones\Create.cshtml" />
+    <Content Include="Views\TipoDirecciones\Delete.cshtml" />
+    <Content Include="Views\TipoDirecciones\Details.cshtml" />
+    <Content Include="Views\TipoDirecciones\Edit.cshtml" />
+    <Content Include="Views\TipoDirecciones\Index.cshtml" />
+    <Content Include="Views\Servicios\Create.cshtml" />
+    <Content Include="Views\Servicios\Delete.cshtml" />
+    <Content Include="Views\Servicios\Details.cshtml" />
+    <Content Include="Views\Servicios\Edit.cshtml" />
+    <Content Include="Views\Servicios\Index.cshtml" />
+    <Content Include="Views\Bonos\Create.cshtml" />
+    <Content Include="Views\Bonos\Delete.cshtml" />
+    <Content Include="Views\Bonos\Details.cshtml" />
+    <Content Include="Views\Bonos\Edit.cshtml" />
+    <Content Include="Views\Bonos\Index.cshtml" />
+    <Content Include="Views\TipoDescuentos\Create.cshtml" />
+    <Content Include="Views\TipoDescuentos\Delete.cshtml" />
+    <Content Include="Views\TipoDescuentos\Details.cshtml" />
+    <Content Include="Views\TipoDescuentos\Edit.cshtml" />
+    <Content Include="Views\TipoDescuentos\Index.cshtml" />
+    <Content Include="Views\Empresas\Create.cshtml" />
+    <Content Include="Views\Empresas\Delete.cshtml" />
+    <Content Include="Views\Empresas\Details.cshtml" />
+    <Content Include="Views\Empresas\Edit.cshtml" />
+    <Content Include="Views\Empresas\Index.cshtml" />
+    <Content Include="Views\Bancos\Create.cshtml" />
+    <Content Include="Views\Bancos\Delete.cshtml" />
+    <Content Include="Views\Bancos\Details.cshtml" />
+    <Content Include="Views\Bancos\Edit.cshtml" />
+    <Content Include="Views\Bancos\Index.cshtml" />
+    <Content Include="Views\Areas\Create.cshtml" />
+    <Content Include="Views\Areas\Delete.cshtml" />
+    <Content Include="Views\Areas\Details.cshtml" />
+    <Content Include="Views\Areas\Edit.cshtml" />
+    <Content Include="Views\Areas\Index.cshtml" />
+    <Content Include="Views\Puestos\Create.cshtml" />
+    <Content Include="Views\Puestos\Delete.cshtml" />
+    <Content Include="Views\Puestos\Details.cshtml" />
+    <Content Include="Views\Puestos\Edit.cshtml" />
+    <Content Include="Views\Puestos\Index.cshtml" />
+    <Content Include="Views\Colaboradores\Create.cshtml" />
+    <Content Include="Views\Colaboradores\Delete.cshtml" />
+    <Content Include="Views\Colaboradores\Details.cshtml" />
+    <Content Include="Views\Colaboradores\Edit.cshtml" />
+    <Content Include="Views\Colaboradores\Index.cshtml" />
+    <EntityDeploy Include="Models\LABORAGT_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LABORAGT_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LABORAGT_Model.edmx.diagram">
+      <DependentUpon>LABORAGT_Model.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

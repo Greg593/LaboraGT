@@ -12,7 +12,7 @@ namespace LaboraGTv0._1.Controllers
 {
     public class PaisController : Controller
     {
-        private DB_LABORAGT_Entities db = new DB_LABORAGT_Entities();
+        private LABORAGT_Entities db = new LABORAGT_Entities();
 
         // GET: Pais
         public ActionResult Index()

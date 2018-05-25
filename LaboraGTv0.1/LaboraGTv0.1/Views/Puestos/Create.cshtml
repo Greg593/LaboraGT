@@ -1,0 +1,70 @@
+﻿@model LaboraGTv0._1.Models.Puesto
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+
+<div class="ui segment vertical">
+    <div class="ui container">
+        <div class="ui header block">
+            <div class="ui breadcrumb">
+                <a href="/" class="section"><i class="icon home "></i></a>
+                <i class="right angle icon divider"></i>
+                <a href="/Puestos" class="section">Puestos</i></a>
+                <i class="right angle icon divider"></i>
+                <div class="section active">Agregar Puestos</div>
+            </div>
+        </div>
+        <h1 class="ui header">Nuevo Puesto</h1>
+        <div class="ui divider"></div>
+        <div class="ui container text">
+            @using (Html.BeginForm("Create", "Puestos",
+                                    new { ReturnUrl = ViewBag.ReturnUrl },
+                                    FormMethod.Post, new { @class = "ui form attached fluid segment" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "ui error message" })
+
+                <div class="field required">
+                    <label>Descripción</label>
+                    @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @required = "" } })
+                </div>
+                <div class="field">
+                    <label>Sueldo Ordinario</label>
+                    <div class="ui right labeled input">
+                        <label for="amount" class="ui label">Q</label>
+                        @Html.EditorFor(model => model.sueldoOrdinario, new { htmlAttributes = new { @class = "form-control" } })
+                        <div class="ui basic label">.00</div>
+                    </div>
+                </div>
+                <div class="field required">
+                    <label>Area</label>
+                    @Html.DropDownList("idArea", null, htmlAttributes: new { @class = "ui search dropdown" })
+
+                </div>
+
+                <div class="ui divider hidden"></div>
+                <button type="submit" class="ui button fluid teal">
+                    <i class="icon save"></i>
+                    Completar
+                </button>
+                
+            }
+            <!--<div class="ui bottom attached warning message">
+                <ul class="list">
+                    <li> Html.ValidationMessageFor(model => model.sueldoOrdinario, "")</li>
+                    <li> Html.ValidationMessageFor(model => model.descripcion, "")</li>
+                    <li> Html.ValidationMessageFor(model => model.idArea, "")</li>
+                </ul>
+            </div>-->
+        </div>
+
+
+
+
+    </div>
+</div>
+
+

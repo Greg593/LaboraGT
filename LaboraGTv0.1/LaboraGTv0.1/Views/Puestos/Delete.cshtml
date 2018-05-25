@@ -1,0 +1,49 @@
+﻿@model LaboraGTv0._1.Models.Puesto
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Puesto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sueldoOrdinario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sueldoOrdinario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Area.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area.Descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -20,9 +20,9 @@ namespace LaboraGTv0._1.Models
             this.Puesto = new HashSet<Puesto>();
         }
     
-        public decimal idImpuesto { get; set; }
+        public int idImpuesto { get; set; }
         public string descripcion { get; set; }
-        public Nullable<decimal> porcentaje { get; set; }
+        public decimal porcentaje { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Puesto> Puesto { get; set; }

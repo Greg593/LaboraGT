@@ -1,0 +1,35 @@
+﻿@model LaboraGTv0._1.Models.TipoDocumento
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoDocumento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoDocumento1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoDocumento1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mascara)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mascara)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTipoDocumento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

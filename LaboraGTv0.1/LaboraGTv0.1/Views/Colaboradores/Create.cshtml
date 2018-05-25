@@ -1,0 +1,125 @@
+﻿@model LaboraGTv0._1.Models.Colaborador
+
+@{
+    ViewBag.Title = "Colaboradores";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="ui segment vertical">
+    <div class="ui container">
+        <div class="ui header block">
+            <div class="ui breadcrumb">
+                <a href="/" class="section"><i class="icon home "></i></a>
+                <i class="right angle icon divider"></i>
+                <a href="/Bonos" class="section">Colaboradores</a>
+                <i class="right angle icon divider"></i>
+                <div class="section active">Agregar Colaborador</div>
+            </div>
+        </div>
+        <h1 class="ui header">Nuevo Bono</h1>
+        <div class="ui divider"></div>
+        <form method="post" class="ui form container text segment">
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "ui error message" })
+
+            <div class="field required">
+                <label>Nombre Completo</label>
+                <div class="three fields">
+                    <div class="field">
+                        @Html.EditorFor(model => model.nombre1, new { htmlAttributes = new { @required = "", @placeholder = "Primer nombre" } })
+                        @Html.ValidationMessageFor(model => model.nombre1, "", new { @class = "ui error messager" })
+                    </div>
+                    <div class="field">
+                        @Html.EditorFor(model => model.nombre2, new { htmlAttributes = new { @placeholder = "Segundo nombre [Opcional]" } })
+                        @Html.ValidationMessageFor(model => model.nombre2, "", new { @class = "ui error messager" })
+                    </div>
+                    <div class="field">
+                        @Html.EditorFor(model => model.nombre3, new { htmlAttributes = new { @placeholder = "Tercer nombre [Opcional]" } })
+                        @Html.ValidationMessageFor(model => model.nombre3, "", new { @class = "ui error messager" })
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="field required">
+                <label>Apellidos</label>
+                <div class="three fields">
+                    <div class="field">
+                        @Html.EditorFor(model => model.apellido1, new { htmlAttributes = new { @required = "", @placeholder = "Primer apellido [Opcional]" } })
+                        @Html.ValidationMessageFor(model => model.apellido1, "", new { @class = "ui error messager" })
+                    </div>
+                    <div class="field">
+                        @Html.EditorFor(model => model.apellido2, new { htmlAttributes = new {  @placeholder = "Segundo apellido [Opcional]" } })
+                        @Html.ValidationMessageFor(model => model.apellido2, "", new { @class = "ui error messager" })
+                    </div>
+                    <div class="field">
+                        @Html.EditorFor(model => model.apellido3, new { htmlAttributes = new {  @placeholder = "Tercer Apellido [Opcional]" } })
+                        @Html.ValidationMessageFor(model => model.apellido3, "", new { @class = "ui error messager" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label>Fecha Nacimiento</label>
+                    <div class="ui calendar" id="calendar">
+                        <div class="ui input left icon">
+                            <i class="calendar icon"></i>
+                            @Html.EditorFor(model => model.fechaNacimiento)
+                        </div>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.fechaNacimiento, "", new { @class = "ui error messager" })
+                </div>
+                <div class="field">
+                    <label>Sexo</label>
+                    
+                    <select class="ui search dropdown" name="sexo" id="sexo" required>
+                        <option value="">Seleccione una Sexo</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+
+                </div>
+            </div>
+
+            
+
+
+
+            
+
+            <div class="field">
+                <label>Estado civil</label>
+                
+                    @Html.DropDownList("idEstadoCivil", null, htmlAttributes: new { @class = "ui search dropdown" })
+                    @Html.ValidationMessageFor(model => model.idEstadoCivil, "", new { @class = "text-danger" })
+                
+            </div>
+
+            <div class="field">
+               <label>Profesión</label>
+
+                    @Html.DropDownList("idProfesion", null, htmlAttributes: new { @class = "ui search dropdown" })
+                    @Html.ValidationMessageFor(model => model.idProfesion, "", new { @class = "text-danger" })
+                
+            </div>
+
+            <div class="field">
+                <label>Puesto</label>
+                    @Html.DropDownList("idPuesto", null, htmlAttributes: new { @class = "ui search dropdown" })
+                    @Html.ValidationMessageFor(model => model.idPuesto, "", new { @class = "text-danger" })
+                
+            </div>
+            <div class="ui divider hidden"></div>
+            <button type="submit" class="ui button fluid teal">
+                <i class="icon save"></i>
+                Completar
+            </button>
+        </form>
+
+    </div>
+</div>

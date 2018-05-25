@@ -14,10 +14,10 @@ namespace LaboraGTv0._1.Models
     
     public partial class ColaboradorDescuento
     {
-        public decimal idColaborador { get; set; }
-        public decimal idDescuento { get; set; }
-        public decimal idTipoDescuento { get; set; }
-        public Nullable<decimal> monto { get; set; }
+        public int idColaborador { get; set; }
+        public int idDescuento { get; set; }
+        public int idTipoDescuento { get; set; }
+        public decimal monto { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }
         public virtual TipoDescuento TipoDescuento { get; set; }

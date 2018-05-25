@@ -1,0 +1,46 @@
+﻿@model LaboraGTv0._1.Models.Profesion
+
+@{
+    ViewBag.Title = "Nueva Profesion";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+
+<div class="ui segment vertical">
+    <div class="ui container">
+        <div class="ui header block">
+            <div class="ui breadcrumb">
+                <a href="/" class="section"><i class="icon home "></i></a>
+                <i class="right angle icon divider"></i>
+                <a href="/Profesiones" class="section">Profesiones</i></a>
+                <i class="right angle icon divider"></i>
+                <div class="section active">Agregar Profesión</div>
+            </div>
+        </div>
+        <h1 class="ui header">Nueva Profesión</h1>
+        <div class="ui divider"></div>
+        @using (Html.BeginForm("Create", "Profesiones",
+                    new { ReturnUrl = ViewBag.ReturnUrl },
+                    FormMethod.Post, new { @class = "ui form container text" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "ui error message" })
+
+
+            <div class="field required">
+                <label>Descripción</label>
+
+                @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @required = "" } })
+                @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "ui error message" })
+
+            </div>
+
+            <div class="ui divider hidden"></div>
+            <button type="submit" class="ui button fluid teal">
+                <i class="icon save"></i>
+                Completar
+            </button>
+        }
+
+    </div>
+</div>

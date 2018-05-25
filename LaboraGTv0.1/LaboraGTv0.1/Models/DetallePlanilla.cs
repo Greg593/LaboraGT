@@ -14,17 +14,17 @@ namespace LaboraGTv0._1.Models
     
     public partial class DetallePlanilla
     {
-        public decimal idPlanilla { get; set; }
-        public decimal idColaborador { get; set; }
-        public decimal idFormaPago { get; set; }
-        public decimal año { get; set; }
-        public decimal mes { get; set; }
-        public decimal correlativo { get; set; }
-        public Nullable<decimal> Ordinario { get; set; }
-        public Nullable<decimal> Bonificaciones { get; set; }
-        public Nullable<decimal> Descuentos { get; set; }
-        public Nullable<decimal> Impuestos { get; set; }
-        public Nullable<decimal> Extras { get; set; }
+        public int idPlanilla { get; set; }
+        public int idColaborador { get; set; }
+        public int idFormaPago { get; set; }
+        public int anio { get; set; }
+        public int mes { get; set; }
+        public int correlativo { get; set; }
+        public decimal Ordinario { get; set; }
+        public decimal Bonificaciones { get; set; }
+        public decimal Descuentos { get; set; }
+        public decimal Impuestos { get; set; }
+        public decimal Extras { get; set; }
         public Nullable<decimal> Total { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }

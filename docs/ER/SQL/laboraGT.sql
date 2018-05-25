@@ -8,88 +8,22 @@
 -- Target DBMS : Oracle 11g
 --
 
-DROP TABLE Area CASCADE CONSTRAINTS
-;
-DROP TABLE Banco CASCADE CONSTRAINTS
-;
-DROP TABLE BonoColaborador CASCADE CONSTRAINTS
-;
-DROP TABLE Bonos CASCADE CONSTRAINTS
-;
-DROP TABLE Colaborador CASCADE CONSTRAINTS
-;
-DROP TABLE ColaboradorDescuento CASCADE CONSTRAINTS
-;
-DROP TABLE Credencial CASCADE CONSTRAINTS
-;
-DROP TABLE CuentaDeposito CASCADE CONSTRAINTS
-;
-DROP TABLE CuentaEmpresa CASCADE CONSTRAINTS
-;
-DROP TABLE DatoFamiliar CASCADE CONSTRAINTS
-;
-DROP TABLE DatosAcademicos CASCADE CONSTRAINTS
-;
-DROP TABLE DatosLaborales CASCADE CONSTRAINTS
-;
-DROP TABLE Departamento CASCADE CONSTRAINTS
-;
-DROP TABLE DetallePlanilla CASCADE CONSTRAINTS
-;
-DROP TABLE Direcciones CASCADE CONSTRAINTS
-;
-DROP TABLE Empresa CASCADE CONSTRAINTS
-;
-DROP TABLE EmpresaColaborador CASCADE CONSTRAINTS
-;
-DROP TABLE EstadoCivil CASCADE CONSTRAINTS
-;
-DROP TABLE formaPago CASCADE CONSTRAINTS
-;
-DROP TABLE Identificacion CASCADE CONSTRAINTS
-;
-DROP TABLE Impuesto CASCADE CONSTRAINTS
-;
-DROP TABLE Municipio CASCADE CONSTRAINTS
-;
-DROP TABLE NivelAcademico CASCADE CONSTRAINTS
-;
-DROP TABLE Pais CASCADE CONSTRAINTS
-;
-DROP TABLE Parentezco CASCADE CONSTRAINTS
-;
-DROP TABLE Planilla CASCADE CONSTRAINTS
-;
-DROP TABLE Profesion CASCADE CONSTRAINTS
-;
-DROP TABLE Puesto CASCADE CONSTRAINTS
-;
-DROP TABLE PuestoImpuesto CASCADE CONSTRAINTS
-;
-DROP TABLE ReferenciaColaborador CASCADE CONSTRAINTS
-;
-DROP TABLE Servicio CASCADE CONSTRAINTS
-;
-DROP TABLE ServicioEmpresa CASCADE CONSTRAINTS
-;
-DROP TABLE TipoCuenta CASCADE CONSTRAINTS
-;
-DROP TABLE TipoDescuento CASCADE CONSTRAINTS
-;
-DROP TABLE TipoDireccion CASCADE CONSTRAINTS
-;
-DROP TABLE TipoDocumento CASCADE CONSTRAINTS
-;
-DROP TABLE TipoReferencia CASCADE CONSTRAINTS
-;
+
+ GO
+CREATE DATABASE LABORAGT;
+ GO
+ GO
+ USE LABORAGT;
+ GO
+
 
 -- 
 -- TABLE: Area 
 --
 
 CREATE TABLE Area(
-    idArea         NUMBER(3, 0)    NOT NULL,
-    Descripcion    VARCHAR2(40),
+    idArea        int    NOT NULL identity(1,1),
+    Descripcion    int not null,
     CONSTRAINT PK4 PRIMARY KEY (idArea)
 )
 ;
@@ -101,8 +35,8 @@ CREATE TABLE Area(
 --
 
 CREATE TABLE Banco(
-    idBanco        NUMBER(3, 0)    NOT NULL,
-    descripcion    VARCHAR2(40),
+    idBanco        int NOT NULL identity(1,1),
+    descripcion    VARCHAR(40) not null,
     CONSTRAINT PK25 PRIMARY KEY (idBanco)
 )
 ;
@@ -114,9 +48,9 @@ CREATE TABLE Banco(
 --
 
 CREATE TABLE BonoColaborador(
-    idBono           NUMBER(3, 0)     NOT NULL,
-    idColaborador    NUMBER(15, 0)    NOT NULL,
-    CONSTRAINT PK34 PRIMARY KEY (idBono, idColaborador)
+    idBono           int     NOT NULL,
+    idColaborador    int    NOT NULL,
+    -- CONSTRAINT PK34 PRIMARY KEY (idBono, idColaborador)
 )
 ;
 
@@ -127,9 +61,9 @@ CREATE TABLE BonoColaborador(
 --
 
 CREATE TABLE Bonos(
-    idBono         NUMBER(3, 0)     NOT NULL,
-    descripcion    VARCHAR2(40),
-    monto          NUMBER(13, 2),
+    idBono         int     NOT NULL identity(1,1),
+    descripcion    VARCHAR(40) not null,
+    monto          decimal(13, 2) not null,
     CONSTRAINT PK33 PRIMARY KEY (idBono)
 )
 ;
@@ -141,19 +75,19 @@ CREATE TABLE Bonos(
 --
 
 CREATE TABLE Colaborador(
-    idColaborador      NUMBER(15, 0)    NOT NULL,
-    nombre1            VARCHAR2(30),
-    nombre2            VARCHAR2(30),
-    nombre3            VARCHAR2(30),
-    apellido1          VARCHAR2(30),
-    apellido2          VARCHAR2(30),
-    apellido3          VARCHAR2(30),
-    fechaNacimiento    DATE,
-    sexo               VARCHAR2(1),
-    idEstadoCivil      NUMBER(3, 0)     NOT NULL,
-    idProfesion        NUMBER(3, 0)     NOT NULL,
-    idPuesto           NUMBER(3, 0)     NOT NULL,
-    usuario            VARCHAR2(10)     NOT NULL,
+    idColaborador      int   NOT NULL identity(1,1),
+    nombre1            VARCHAR(45) not null,
+    nombre2            VARCHAR(45),
+    nombre3            VARCHAR(45) ,
+    apellido1          VARCHAR(45) not null,
+    apellido2          VARCHAR(45),
+    apellido3          VARCHAR(45),
+    fechaNacimiento    DATE not null,
+    sexo               VARCHAR(1) not null,
+    idEstadoCivil      int     NOT NULL,
+    idProfesion        int     NOT NULL,
+    idPuesto           int     NOT NULL,
+    usuario            VARCHAR(45)     NOT NULL,
     CONSTRAINT PK7 PRIMARY KEY (idColaborador)
 )
 ;
@@ -165,11 +99,11 @@ CREATE TABLE Colaborador(
 --
 
 CREATE TABLE ColaboradorDescuento(
-    idColaborador      NUMBER(15, 0)    NOT NULL,
-    idDescuento        NUMBER(3, 0)     NOT NULL,
-    idTipoDescuento    NUMBER(3, 0)     NOT NULL,
-    monto              NUMBER(13, 2),
-    CONSTRAINT PK40 PRIMARY KEY (idColaborador, idDescuento)
+    idColaborador      int    NOT NULL,
+    idDescuento       int     NOT NULL,
+    idTipoDescuento   int     NOT NULL,
+    monto              decimal(13, 2) not null,
+    -- CONSTRAINT PK40 PRIMARY KEY (idColaborador)
 )
 ;
 
@@ -180,8 +114,8 @@ CREATE TABLE ColaboradorDescuento(
 --
 
 CREATE TABLE Credencial(
-    usuario     VARCHAR2(10)    NOT NULL,
-    password    VARCHAR2(20),
+    usuario     VARCHAR(45)    NOT NULL,
+    passw    VARCHAR(45) not null,
     CONSTRAINT PK45 PRIMARY KEY (usuario)
 )
 ;
@@ -193,10 +127,10 @@ CREATE TABLE Credencial(
 --
 
 CREATE TABLE CuentaDeposito(
-    idColaborador    NUMBER(15, 0)    NOT NULL,
-    idTipoCuenta     NUMBER(2, 0)     NOT NULL,
-    idBanco          NUMBER(3, 0)     NOT NULL,
-    CONSTRAINT PK32 PRIMARY KEY (idColaborador)
+    idColaborador    int    NOT NULL,
+    idTipoCuenta    int     NOT NULL,
+    idBanco         int     NOT NULL,
+   --  CONSTRAINT PK32 PRIMARY KEY (idColaborador)
 )
 ;
 
@@ -207,11 +141,11 @@ CREATE TABLE CuentaDeposito(
 --
 
 CREATE TABLE CuentaEmpresa(
-    idEmpresa       NUMBER(5, 0)    NOT NULL,
-    idTipoCuenta    NUMBER(2, 0)    NOT NULL,
-    idBanco         NUMBER(3, 0)    NOT NULL,
-    noCuenta        VARCHAR2(20),
-    CONSTRAINT PK24 PRIMARY KEY (idEmpresa)
+    idEmpresa       int   NOT NULL,
+    idTipoCuenta   int    NOT NULL,
+    idBanco        int    NOT NULL,
+    noCuenta        VARCHAR(20) not null,
+   -- CONSTRAINT PK24 PRIMARY KEY (idEmpresa)
 )
 ;
 
@@ -222,14 +156,14 @@ CREATE TABLE CuentaEmpresa(
 --
 
 CREATE TABLE DatoFamiliar(
-    idColaborador     NUMBER(15, 0)    NOT NULL,
-    idDatoFamiliar    NUMBER(3, 0)     NOT NULL,
-    idParentezco      NUMBER(3, 0)     NOT NULL,
-    idProfesion       NUMBER(3, 0)     NOT NULL,
-    nombre            VARCHAR2(80),
-    edad              NUMBER(3, 0),
-    telefono          VARCHAR2(15),
-    CONSTRAINT PK20 PRIMARY KEY (idColaborador, idDatoFamiliar)
+    idColaborador     int    NOT NULL,
+    idDatoFamiliar   int identity(1,1)    NOT NULL,
+    idParentezco     int     NOT NULL,
+    idProfesion      int     NOT NULL,
+    nombre            VARCHAR(80) not null,
+    edad             int not null,
+    telefono          VARCHAR(15) not null,
+    CONSTRAINT PK20 PRIMARY KEY (idDatoFamiliar)
 )
 ;
 
@@ -240,19 +174,19 @@ CREATE TABLE DatoFamiliar(
 --
 
 CREATE TABLE DatosAcademicos(
-    idColaborador           NUMBER(15, 0)    NOT NULL,
-    idAdemicoColaborador    NUMBER(3, 0)     NOT NULL,
-    idNivelAcademico        NUMBER(3, 0)     NOT NULL,
-    nombreInstitucion       VARCHAR2(60),
-    fechaInicio             DATE,
-    fechaFinalizo           DATE,
-    telefono                VARCHAR2(15),
-    direccion               VARCHAR2(80),
-    observacion             VARCHAR2(200),
-    idPais                  VARCHAR2(3),
-    idDepartamento          NUMBER(3, 0),
-    idMunicipio             NUMBER(3, 0),
-    CONSTRAINT PK22 PRIMARY KEY (idColaborador, idAdemicoColaborador)
+    idColaborador           int    NOT NULL,
+    idAcademicoColaborador   int identity(1,1)     NOT NULL,
+    idNivelAcademico       int     NOT NULL,
+    nombreInstitucion       VARCHAR(60) not null,
+    fechaInicio             DATE not null,
+    fechaFinalizo           DATE not null,
+    telefono                VARCHAR(15) not null,
+    direccion               VARCHAR(80) not null,
+    observacion             VARCHAR(200),
+    idPais                  VARCHAR(3) not null,
+    idDepartamento          int,
+    idMunicipio             int,
+    CONSTRAINT PK22 PRIMARY KEY (idAcademicoColaborador)
 )
 ;
 
@@ -263,17 +197,17 @@ CREATE TABLE DatosAcademicos(
 --
 
 CREATE TABLE DatosLaborales(
-    idColaborador    NUMBER(15, 0)    NOT NULL,
-    idLaboral        NUMBER(3, 0)     NOT NULL,
-    Empresa          VARCHAR2(80),
-    CargoInicial     VARCHAR2(40),
-    CargoFinal       VARCHAR2(40),
-    Telefono         VARCHAR2(15),
-    JefeInmediato    VARCHAR2(80),
-    FechaInicio      DATE,
-    FechaFinal       DATE,
-    MotivoRetiro     VARCHAR2(200),
-    CONSTRAINT PK26 PRIMARY KEY (idColaborador, idLaboral)
+    idColaborador    int    NOT NULL,
+    idLaboral        int     NOT NULL identity(1,1),
+    Empresa          VARCHAR(80) not null,
+    CargoInicial     VARCHAR(40) not null,
+    CargoFinal       VARCHAR(40) not null,
+    Telefono         VARCHAR(15),
+    JefeInmediato    VARCHAR(80) not null,
+    FechaInicio      DATE not null,
+    FechaFinal       DATE not null,
+    MotivoRetiro     VARCHAR(200) not null,
+    CONSTRAINT PK26 PRIMARY KEY (idLaboral)
 )
 ;
 
@@ -284,10 +218,10 @@ CREATE TABLE DatosLaborales(
 --
 
 CREATE TABLE Departamento(
-    idPais            VARCHAR2(3)     NOT NULL,
-    idDepartamento    NUMBER(3, 0)    NOT NULL,
-    descripcion       VARCHAR2(40),
-    CONSTRAINT PK12 PRIMARY KEY (idPais, idDepartamento)
+    idPais            VARCHAR(3)     NOT NULL,
+    idDepartamento    int    NOT NULL identity(1,1),
+    descripcion       VARCHAR(40) not null,
+    CONSTRAINT PK12 PRIMARY KEY (idDepartamento)
 )
 ;
 
@@ -298,19 +232,19 @@ CREATE TABLE Departamento(
 --
 
 CREATE TABLE DetallePlanilla(
-    idPlanilla        NUMBER(15, 0)    NOT NULL,
-    idColaborador     NUMBER(15, 0)    NOT NULL,
-    idFormaPago       NUMBER(3, 0)     NOT NULL,
-    año               NUMBER(4, 0)     NOT NULL,
-    mes               NUMBER(2, 0)     NOT NULL,
-    correlativo       NUMBER(15, 0)    NOT NULL,
-    Ordinario         NUMBER(13, 2),
-    Bonificaciones    NUMBER(13, 2),
-    Descuentos        NUMBER(13, 2),
-    Impuestos         NUMBER(13, 2),
-    Extras            NUMBER(13, 2),
-    Total             NUMBER(13, 2),
-    CONSTRAINT PK37 PRIMARY KEY (idPlanilla, idColaborador, idFormaPago, año, mes, correlativo)
+    idPlanilla        int    NOT NULL,
+    idColaborador     int    NOT NULL,
+    idFormaPago      int     NOT NULL,
+    anio              int     NOT NULL,
+    mes              int     NOT NULL,
+    correlativo       int    NOT NULL identity(1,1),
+    Ordinario         decimal(13,2) not null,
+    Bonificaciones    decimal(13,2) not null,
+    Descuentos        decimal(13,2) not null,
+    Impuestos         decimal(13,2) not null,
+    Extras            decimal(13,2) not null,
+    Total             decimal(13,2),
+    CONSTRAINT PK37 PRIMARY KEY (correlativo)
 )
 ;
 
@@ -321,14 +255,14 @@ CREATE TABLE DetallePlanilla(
 --
 
 CREATE TABLE Direcciones(
-    idColaborador      NUMBER(15, 0)    NOT NULL,
-    idTipoDireccion    NUMBER(3, 0)     NOT NULL,
-    idDireccion        NUMBER(3, 0)     NOT NULL,
-    descripcion        VARCHAR2(40),
-    idPais             VARCHAR2(3),
-    idDepartamento     NUMBER(3, 0),
-    idMunicipio        NUMBER(3, 0),
-    CONSTRAINT PK10 PRIMARY KEY (idColaborador, idTipoDireccion, idDireccion)
+    idColaborador      int    NOT NULL,
+    idTipoDireccion   int     NOT NULL,
+    idDireccion       int     NOT NULL identity(1,1),
+    descripcion        VARCHAR(40) not null,
+    idPais             VARCHAR(3) not null,
+    idDepartamento    int not null,
+    idMunicipio       int not null,
+ CONSTRAINT PK10 PRIMARY KEY (idDireccion)
 )
 ;
 
@@ -339,9 +273,9 @@ CREATE TABLE Direcciones(
 --
 
 CREATE TABLE Empresa(
-    idEmpresa      NUMBER(5, 0)    NOT NULL,
-    descripcion    VARCHAR2(40),
-    NIT            VARCHAR2(18),
+    idEmpresa      int    NOT NULL identity(1,1),
+    descripcion    VARCHAR(40) not null,
+    NIT            VARCHAR(18) not null,
     CONSTRAINT PK5 PRIMARY KEY (idEmpresa)
 )
 ;
@@ -353,10 +287,10 @@ CREATE TABLE Empresa(
 --
 
 CREATE TABLE EmpresaColaborador(
-    idEmpresa        NUMBER(5, 0)     NOT NULL,
-    idColaborador    NUMBER(15, 0)    NOT NULL,
-    Activo           VARCHAR2(1),
-    CONSTRAINT PK9 PRIMARY KEY (idEmpresa, idColaborador)
+    idEmpresa       int     NOT NULL,
+    idColaborador    int    NOT NULL,
+    Activo           VARCHAR(1),
+   -- CONSTRAINT PK9 PRIMARY KEY (idEmpresa, idColaborador)
 )
 ;
 
@@ -367,8 +301,8 @@ CREATE TABLE EmpresaColaborador(
 --
 
 CREATE TABLE EstadoCivil(
-    idEstadoCivil    NUMBER(3, 0)    NOT NULL,
-    descripcion      VARCHAR2(40),
+    idEstadoCivil    int identity(1,1)    NOT NULL,
+    descripcion      VARCHAR(40) not null,
     CONSTRAINT PK27 PRIMARY KEY (idEstadoCivil)
 )
 ;
@@ -380,8 +314,8 @@ CREATE TABLE EstadoCivil(
 --
 
 CREATE TABLE formaPago(
-    idFormaPago    NUMBER(3, 0)    NOT NULL,
-    descripcion    VARCHAR2(40),
+    idFormaPago    int     NOT NULL identity(1,1),
+    descripcion    VARCHAR(40) not null,
     CONSTRAINT PK31 PRIMARY KEY (idFormaPago)
 )
 ;
@@ -393,11 +327,11 @@ CREATE TABLE formaPago(
 --
 
 CREATE TABLE Identificacion(
-    idColaborador       NUMBER(15, 0)    NOT NULL,
-    idIdentificacion    NUMBER(3, 0)     NOT NULL,
-    idTipoDocumento     NUMBER(3, 0)     NOT NULL,
-    noDocumento         VARCHAR2(18),
-    CONSTRAINT PK44 PRIMARY KEY (idColaborador, idIdentificacion)
+    idColaborador       int    NOT NULL,
+    idIdentificacion   int  identity(1,1)   NOT NULL,
+    idTipoDocumento    int     NOT NULL,
+    noDocumento         VARCHAR(18) not null,
+    CONSTRAINT PK44 PRIMARY KEY ( idIdentificacion)
 )
 ;
 
@@ -408,9 +342,9 @@ CREATE TABLE Identificacion(
 --
 
 CREATE TABLE Impuesto(
-    idImpuesto     NUMBER(3, 0)    NOT NULL,
-    descripcion    VARCHAR2(40),
-    porcentaje     NUMBER(5, 3),
+    idImpuesto     int  identity(1,1)  NOT NULL,
+    descripcion    VARCHAR(125) not null,
+    porcentaje     decimal(5,2) not null,
     CONSTRAINT PK28 PRIMARY KEY (idImpuesto)
 )
 ;
@@ -422,11 +356,11 @@ CREATE TABLE Impuesto(
 --
 
 CREATE TABLE Municipio(
-    idPais            VARCHAR2(3)     NOT NULL,
-    idDepartamento    NUMBER(3, 0)    NOT NULL,
-    idMunicipio       NUMBER(3, 0)    NOT NULL,
-    descripcion       VARCHAR2(40),
-    CONSTRAINT PK13 PRIMARY KEY (idPais, idDepartamento, idMunicipio)
+    idPais            VARCHAR(3)     NOT NULL,
+    idDepartamento    int    NOT NULL,
+    idMunicipio       int    NOT NULL identity(1,1),
+    descripcion       VARCHAR(40) not null,
+    CONSTRAINT PK13 PRIMARY KEY (idMunicipio)
 )
 ;
 
@@ -437,8 +371,8 @@ CREATE TABLE Municipio(
 --
 
 CREATE TABLE NivelAcademico(
-    idNivelAcademico    NUMBER(3, 0)    NOT NULL,
-    descripcion         VARCHAR2(40),
+    idNivelAcademico    int    NOT NULL identity(1,1),
+    descripcion         VARCHAR(70) not null,
     CONSTRAINT PK21 PRIMARY KEY (idNivelAcademico)
 )
 ;
@@ -450,8 +384,8 @@ CREATE TABLE NivelAcademico(
 --
 
 CREATE TABLE Pais(
-    idPais         VARCHAR2(3)     NOT NULL,
-    descripcion    VARCHAR2(40),
+    idPais         VARCHAR(3)     NOT NULL,
+    descripcion    VARCHAR(40) not null,
     extension      CHAR(10),
     CONSTRAINT PK11 PRIMARY KEY (idPais)
 )
@@ -464,8 +398,8 @@ CREATE TABLE Pais(
 --
 
 CREATE TABLE Parentezco(
-    idParentezco    NUMBER(3, 0)    NOT NULL,
-    descripcion     VARCHAR2(40),
+    idParentezco    int    NOT NULL identity(1,1),
+    descripcion     VARCHAR(75) not null,
     CONSTRAINT PK18 PRIMARY KEY (idParentezco)
 )
 ;
@@ -477,10 +411,10 @@ CREATE TABLE Parentezco(
 --
 
 CREATE TABLE Planilla(
-    idPlanilla    NUMBER(15, 0)    NOT NULL,
-    año           NUMBER(4, 0)     NOT NULL,
-    mes           NUMBER(2, 0)     NOT NULL,
-    CONSTRAINT PK36 PRIMARY KEY (idPlanilla, año, mes)
+    idPlanilla    int    NOT NULL identity(1,1),
+    anio           int     NOT NULL,
+    mes           int     NOT NULL,
+    CONSTRAINT PK36 PRIMARY KEY (idPlanilla)
 )
 ;
 
@@ -491,8 +425,8 @@ CREATE TABLE Planilla(
 --
 
 CREATE TABLE Profesion(
-    idProfesion    NUMBER(3, 0)    NOT NULL,
-    descripcion    VARCHAR2(40),
+    idProfesion    int    NOT NULL identity(1,1),
+    descripcion    VARCHAR(125) not null,
     CONSTRAINT PK19 PRIMARY KEY (idProfesion)
 )
 ;
@@ -504,10 +438,10 @@ CREATE TABLE Profesion(
 --
 
 CREATE TABLE Puesto(
-    idPuesto           NUMBER(3, 0)     NOT NULL,
-    descripcion        VARCHAR2(40),
-    sueldoOrdinario    NUMBER(13, 2),
-    idArea             NUMBER(3, 0)     NOT NULL,
+    idPuesto           int    NOT NULL identity(1,1),
+    descripcion        VARCHAR(125) not null,
+    sueldoOrdinario    decimal(13,2) not null,
+    idArea             int     NOT NULL,
     CONSTRAINT PK3 PRIMARY KEY (idPuesto)
 )
 ;
@@ -519,9 +453,9 @@ CREATE TABLE Puesto(
 --
 
 CREATE TABLE PuestoImpuesto(
-    idImpuesto    NUMBER(3, 0)    NOT NULL,
-    idPuesto      NUMBER(3, 0)    NOT NULL,
-    CONSTRAINT PK35 PRIMARY KEY (idImpuesto, idPuesto)
+    idImpuesto    int    NOT NULL,
+    idPuesto      int    NOT NULL,
+    -- CONSTRAINT PK35 PRIMARY KEY (idImpuesto, idPuesto)
 )
 ;
 
@@ -532,16 +466,16 @@ CREATE TABLE PuestoImpuesto(
 --
 
 CREATE TABLE ReferenciaColaborador(
-    idColaborador       NUMBER(15, 0)    NOT NULL,
-    idReferencia        CHAR(10)         NOT NULL,
-    nombre              CHAR(10),
-    telefono1           CHAR(10),
-    direccion           CHAR(10),
-    edad                CHAR(10),
-    idTipoReferencia    NUMBER(3, 0)     NOT NULL,
-    idParentezco        NUMBER(3, 0)     NOT NULL,
-    idProfesion         NUMBER(3, 0)     NOT NULL,
-    CONSTRAINT PK16 PRIMARY KEY (idColaborador, idReferencia)
+    idColaborador       int    NOT NULL ,
+    idReferencia        int        NOT NULL identity(1,1),
+    nombre              varCHAR(120) not null,
+    telefono1           varCHAR(10) not null,
+    direccion           varCHAR(120),
+    edad                int not null,
+    idTipoReferencia    int     NOT NULL,
+    idParentezco        int     NOT NULL,
+    idProfesion         int     NOT NULL,
+    CONSTRAINT PK16 PRIMARY KEY (idReferencia)
 )
 ;
 
@@ -552,8 +486,8 @@ CREATE TABLE ReferenciaColaborador(
 --
 
 CREATE TABLE Servicio(
-    idServicio     NUMBER(3, 0)    NOT NULL,
-    descripcion    VARCHAR2(40),
+    idServicio     int    NOT NULL identity(1,1),
+    descripcion    VARCHAR(125) not null,
     CONSTRAINT PK6 PRIMARY KEY (idServicio)
 )
 ;
@@ -565,9 +499,9 @@ CREATE TABLE Servicio(
 --
 
 CREATE TABLE ServicioEmpresa(
-    idServicio    NUMBER(3, 0)    NOT NULL,
-    idEmpresa     NUMBER(5, 0)    NOT NULL,
-    CONSTRAINT PK15 PRIMARY KEY (idServicio, idEmpresa)
+    idServicio    int    NOT NULL,
+    idEmpresa     int    NOT NULL,
+    -- CONSTRAINT PK15 PRIMARY KEY (idServicio, idEmpresa)
 )
 ;
 
@@ -578,8 +512,8 @@ CREATE TABLE ServicioEmpresa(
 --
 
 CREATE TABLE TipoCuenta(
-    idTipoCuenta    NUMBER(2, 0)    NOT NULL,
-    descripcion     VARCHAR2(40),
+    idTipoCuenta    int    NOT NULL identity(1,1),
+    descripcion     VARCHAR(120) not null,
     CONSTRAINT PK23 PRIMARY KEY (idTipoCuenta)
 )
 ;
@@ -591,8 +525,8 @@ CREATE TABLE TipoCuenta(
 --
 
 CREATE TABLE TipoDescuento(
-    idTipoDescuento    NUMBER(3, 0)    NOT NULL,
-    descripcion        VARCHAR2(40),
+    idTipoDescuento    int    NOT NULL identity(1,1),
+    descripcion        VARCHAR(120) not null,
     CONSTRAINT PK39 PRIMARY KEY (idTipoDescuento)
 )
 ;
@@ -604,8 +538,8 @@ CREATE TABLE TipoDescuento(
 --
 
 CREATE TABLE TipoDireccion(
-    idTipoDireccion    NUMBER(3, 0)    NOT NULL,
-    descripcion        VARCHAR2(40),
+    idTipoDireccion    int    NOT NULL identity(1,1),
+    descripcion        VARCHAR(120) not null,
     CONSTRAINT PK8 PRIMARY KEY (idTipoDireccion)
 )
 ;
@@ -617,9 +551,9 @@ CREATE TABLE TipoDireccion(
 --
 
 CREATE TABLE TipoDocumento(
-    idTipoDocumento    NUMBER(3, 0)    NOT NULL,
-    tipoDocumento      NUMBER(3, 0),
-    mascara            VARCHAR2(18),
+    idTipoDocumento    int    NOT NULL identity(1,1),
+    tipoDocumento      int not null,
+    mascara            VARCHAR(18) not null,
     CONSTRAINT PK43 PRIMARY KEY (idTipoDocumento)
 )
 ;
@@ -631,8 +565,8 @@ CREATE TABLE TipoDocumento(
 --
 
 CREATE TABLE TipoReferencia(
-    idTipoReferencia    NUMBER(3, 0)    NOT NULL,
-    descripcion         VARCHAR2(40),
+    idTipoReferencia    int    NOT NULL identity(1,1),
+    descripcion         VARCHAR(120) not null,
     CONSTRAINT PK17 PRIMARY KEY (idTipoReferencia)
 )
 ;
@@ -774,13 +708,13 @@ ALTER TABLE DatosAcademicos ADD CONSTRAINT RefPais28
 ;
 
 ALTER TABLE DatosAcademicos ADD CONSTRAINT RefDepartamento29 
-    FOREIGN KEY (idPais, idDepartamento)
-    REFERENCES Departamento(idPais, idDepartamento)
+    FOREIGN KEY ( idDepartamento)
+    REFERENCES Departamento(idDepartamento)
 ;
 
 ALTER TABLE DatosAcademicos ADD CONSTRAINT RefMunicipio30 
-    FOREIGN KEY (idPais, idDepartamento, idMunicipio)
-    REFERENCES Municipio(idPais, idDepartamento, idMunicipio)
+    FOREIGN KEY (idMunicipio)
+    REFERENCES Municipio(idMunicipio)
 ;
 
 
@@ -809,8 +743,8 @@ ALTER TABLE Departamento ADD CONSTRAINT RefPais8
 --
 
 ALTER TABLE DetallePlanilla ADD CONSTRAINT RefPlanilla52 
-    FOREIGN KEY (idPlanilla, año, mes)
-    REFERENCES Planilla(idPlanilla, año, mes)
+    FOREIGN KEY (idPlanilla)
+    REFERENCES Planilla(idPlanilla)
 ;
 
 ALTER TABLE DetallePlanilla ADD CONSTRAINT RefColaborador53 
@@ -844,13 +778,13 @@ ALTER TABLE Direcciones ADD CONSTRAINT RefPais18
 ;
 
 ALTER TABLE Direcciones ADD CONSTRAINT RefDepartamento19 
-    FOREIGN KEY (idPais, idDepartamento)
-    REFERENCES Departamento(idPais, idDepartamento)
+    FOREIGN KEY (idDepartamento)
+    REFERENCES Departamento(idDepartamento)
 ;
 
 ALTER TABLE Direcciones ADD CONSTRAINT RefMunicipio20 
-    FOREIGN KEY (idPais, idDepartamento, idMunicipio)
-    REFERENCES Municipio(idPais, idDepartamento, idMunicipio)
+    FOREIGN KEY (idMunicipio)
+    REFERENCES Municipio(idMunicipio)
 ;
 
 
@@ -889,8 +823,8 @@ ALTER TABLE Identificacion ADD CONSTRAINT RefTipoDocumento59
 --
 
 ALTER TABLE Municipio ADD CONSTRAINT RefDepartamento9 
-    FOREIGN KEY (idPais, idDepartamento)
-    REFERENCES Departamento(idPais, idDepartamento)
+    FOREIGN KEY (idDepartamento)
+    REFERENCES Departamento(idDepartamento)
 ;
 
 

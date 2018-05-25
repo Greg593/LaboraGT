@@ -18,16 +18,18 @@ namespace LaboraGTv0._1.Models
         public Empresa()
         {
             this.EmpresaColaborador = new HashSet<EmpresaColaborador>();
+            this.CuentaEmpresa = new HashSet<CuentaEmpresa>();
             this.Servicio = new HashSet<Servicio>();
         }
     
-        public decimal idEmpresa { get; set; }
+        public int idEmpresa { get; set; }
         public string descripcion { get; set; }
         public string NIT { get; set; }
     
-        public virtual CuentaEmpresa CuentaEmpresa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EmpresaColaborador> EmpresaColaborador { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CuentaEmpresa> CuentaEmpresa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Servicio> Servicio { get; set; }
     }

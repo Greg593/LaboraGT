@@ -20,7 +20,7 @@ namespace LaboraGTv0._1.Models
             this.Direcciones = new HashSet<Direcciones>();
         }
     
-        public decimal idTipoDireccion { get; set; }
+        public int idTipoDireccion { get; set; }
         public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

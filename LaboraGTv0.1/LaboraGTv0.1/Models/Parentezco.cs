@@ -21,7 +21,7 @@ namespace LaboraGTv0._1.Models
             this.ReferenciaColaborador = new HashSet<ReferenciaColaborador>();
         }
     
-        public decimal idParentezco { get; set; }
+        public int idParentezco { get; set; }
         public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

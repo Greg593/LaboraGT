@@ -20,9 +20,9 @@ namespace LaboraGTv0._1.Models
             this.Colaborador = new HashSet<Colaborador>();
         }
     
-        public decimal idBono { get; set; }
+        public int idBono { get; set; }
         public string descripcion { get; set; }
-        public Nullable<decimal> monto { get; set; }
+        public decimal monto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Colaborador> Colaborador { get; set; }

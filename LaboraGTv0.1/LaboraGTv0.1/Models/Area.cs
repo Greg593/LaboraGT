@@ -20,7 +20,7 @@ namespace LaboraGTv0._1.Models
             this.Puesto = new HashSet<Puesto>();
         }
     
-        public decimal idArea { get; set; }
+        public int idArea { get; set; }
         public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
